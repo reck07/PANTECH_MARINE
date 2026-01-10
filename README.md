@@ -197,5 +197,6 @@ Private - All rights reserved
 
 **Built with ❤️ for Pantech Marine Services**
 
-For questions or support, contact: info@pantechmarine.com
+For questions or support, contact: abdulhaseebsagri@gmail.com
+
 
