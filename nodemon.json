@@ -1,0 +1,4 @@
+{
+  "exec": "node ./backend/server.js",
+  "watch": ["./backend"]
+}

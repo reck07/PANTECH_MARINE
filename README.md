@@ -2,30 +2,44 @@
 
 A modern, professional website for Pantech Marine Services DMCEST - Trusted marine surveyors and consultants since 1982.
 
-## 🚀 Features
+# Project Summary
 
-- **Professional Design** - Modern, trustworthy theme with professional color scheme
-- **Responsive Layout** - Works seamlessly on mobile, tablet, and desktop
-- **Interactive Chatbot** - AI-powered chat assistant for customer support
-- **Trust Building** - Statistics, testimonials, certifications, and client logos
-- **Contact Form** - Functional contact form with validation
-- **SEO Optimized** - Proper meta tags and semantic HTML
+## Overview
+This is a full-stack web application built with **React** and **TypeScript**, powered by **Vite**. It features a modern, responsive UI using **Shadcn UI** and **Tailwind CSS**, connected to a custom **Node.js** backend.
+
+## Tech Stack
+*   **Core**: React 18, TypeScript, Vite
+*   **UI & Styling**: Tailwind CSS, Shadcn UI (Radix Primitives), Lucide React (Icons)
+*   **Data & State**: TanStack Query (React Query), React Hook Form, Zod (Validation)
+*   **Visualization**: Recharts
+*   **Backend**: Node.js, Nodemon
+*   **Build Tools**: Concurrently, ESLint, PostCSS
+
+## How It Works (Step-by-Step)
+
+1.  **Start Command**: You run `npm run dev` in the terminal.
+2.  **Parallel Execution**: The `concurrently` utility executes two scripts at the same time:
+    *   **Server**: Runs `npm run server`, which starts your backend (`server.js`) using `nodemon` to watch for changes.
+    *   **Client**: Runs `npm run client`, which launches the Vite development server for the React frontend.
+3.  **Development**:
+    *   The frontend launches (typically at `http://localhost:5173`).
+    *   The backend runs in the background to handle API requests.
+    *   Updates to code trigger automatic reloads (HMR for frontend, restart for backend).
+
 
 ## 📋 Pages
-
 - **Home** - Landing page with hero, services overview, statistics, testimonials
 - **About** - Company history, mission, and key highlights
 - **Services** - Detailed service offerings (6 services)
 - **Contact** - Contact information and inquiry form
 
 ## 🛠️ Tech Stack
-
-- **React 18** - Modern React with hooks
-- **TypeScript** - Type-safe code
-- **Vite** - Fast build tool
-- **React Router** - Client-side routing
-- **Tailwind CSS** - Utility-first CSS framework
-- **Lucide React** - Modern icon library
+*   **Core**: React 18, TypeScript, Vite
+*   **UI & Styling**: Tailwind CSS, Shadcn UI (Radix Primitives), Lucide React (Icons)
+*   **Data & State**: TanStack Query (React Query), React Hook Form, Zod (Validation)
+*   **Visualization**: Recharts
+*   **Backend**: Node.js, Nodemon
+*   **Build Tools**: Concurrently, ESLint, PostCSS
 
 ## 🚀 Getting Started
 
@@ -40,11 +54,23 @@ A modern, professional website for Pantech Marine Services DMCEST - Trusted mari
 # Install dependencies
 npm install
 
-# Start development server
+# Start development server (runs both frontend and backend)
 npm run dev
 ```
 
-The development server will start at http://localhost:8080
+The development servers will start:
+- **Frontend**: http://localhost:8080
+- **Backend API**: http://localhost:3000
+
+### Environment Variables (Optional)
+
+Create a `.env` file in the root directory:
+```env
+VITE_API_URL=http://localhost:3000
+PORT=3000
+```
+
+If not provided, defaults will be used.
 
 ### Build for Production
 
@@ -107,8 +133,9 @@ marine/
 ## 📱 Features Overview
 
 ### Interactive Elements
-- AI Chatbot with quick questions
-- Contact form with validation
+- **AI Chatbot** - Intelligent chatbot with context-aware responses, fallback mode, and error handling
+- **Contact Form** - Full backend integration with validation and real-time feedback
+- **Error Boundaries** - Comprehensive error handling with user-friendly error pages
 - Smooth animations and transitions
 - Mobile-responsive navigation
 
@@ -146,10 +173,15 @@ The production build is in the `dist/` directory after running `npm run build`.
 - **Traditional Hosting** - Upload `dist/` folder
 
 ### Environment Variables
-Currently no environment variables required. If adding backend integration, create `.env` file:
+Create a `.env` file in the root directory (optional):
+```env
+VITE_API_URL=http://localhost:3000
+PORT=3000
 ```
-VITE_API_URL=your_api_url
-```
+
+If not provided, the application will use default values:
+- Frontend API URL: `http://localhost:3000`
+- Backend Port: `3000`
 
 ## 📝 Customization
 
@@ -197,6 +229,13 @@ Private - All rights reserved
 
 **Built with ❤️ for Pantech Marine Services**
 
-For questions or support, contact: abdulhaseebsagri@gmail.com
+For questions or support, contact: info@pantechmarine.com
 
-
+1.  **Start Command**: You run `npm run dev` in the terminal.
+2.  **Parallel Execution**: The `concurrently` utility executes two scripts at the same time:
+    *   **Server**: Runs `npm run server`, which starts your backend (`server.js`) using `nodemon` to watch for changes.
+    *   **Client**: Runs `npm run client`, which launches the Vite development server for the React frontend.
+3.  **Development**:
+    *   The frontend launches (typically at `http://localhost:5173`).
+    *   The backend runs in the background to handle API requests.
+    *   Updates to code trigger automatic reloads (HMR for frontend, restart for backend).

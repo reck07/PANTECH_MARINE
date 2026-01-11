@@ -10,7 +10,7 @@
 The development server is now running! 
 
 ### Access the Website:
-- **Local URL**: http://localhost:8080
+- **Local URL**: http://localhost:5173
 - Open this URL in your browser to see the website
 
 ### To Stop the Server:
@@ -193,5 +193,3 @@ The website is:
 - ✅ Production-ready
 
 **Enjoy your new professional marine services website!** 🚢
-
-
