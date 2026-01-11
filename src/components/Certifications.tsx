@@ -27,7 +27,7 @@ const Certifications = memo(function Certifications() {
     },
     {
       icon: Badge,
-      title: 'Insurance Industry Certified',
+      title: 'Insurance Industry/Certified',
       description: 'Certified by leading marine insurance companies'
     },
     {
