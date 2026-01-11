@@ -22,17 +22,17 @@ const Certifications = memo(function Certifications() {
     },
     {
       icon: FileCheck,
-      title: 'Classification Society Approved',
+      title: 'Classification Society',
       description: 'Approved by major classification societies'
     },
     {
       icon: Badge,
-      title: 'Insurance Industry/Certified',
+      title: 'Insurance Certified',
       description: 'Certified by leading marine insurance companies'
     },
     {
       icon: Globe,
-      title: 'International/Standards',
+      title: 'International Standards',
       description: 'Compliant with international marine survey standards'
     },
     {
