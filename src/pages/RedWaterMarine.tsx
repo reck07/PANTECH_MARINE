@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Ship, Phone, Mail, MapPin, Clock, Anchor, Globe, Shield } from 'lucide-react'
+import RedWaterSlider from '../components/RedWaterSlider'
 
 export default function RedWaterMarine() {
   useEffect(() => {
@@ -89,6 +90,8 @@ export default function RedWaterMarine() {
           </div>
         </div>
       </section>
+
+      <RedWaterSlider />
 
       {/* Services */}
       <section className="py-20 bg-gradient-to-b from-[#0A1F3D] to-navy-deep">
