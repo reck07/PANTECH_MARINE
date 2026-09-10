@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Menu, Phone, Mail, Shield, Clock } from 'lucide-react'
 import { useState } from 'react'
+import MarineCoin from './MarineCoin'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -31,22 +32,7 @@ export default function Header() {
       <div className="py-4 bg-white px-4">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="flex items-center">
-              <img
-                src="/logo.svg"
-                alt="Pantech Marine Services Logo"
-                className="h-12 md:h-16 w-auto object-contain"
-                onError={(e) => {
-                  // Fallback to text if image fails to load
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const parent = target.parentElement;
-                  if (parent) {
-                    parent.innerHTML = '<span class="font-heading font-bold text-xl text-primary">PANTECH</span>';
-                  }
-                }}
-              />
-            </div>
+            <MarineCoin size={64} className="shrink-0" />
             <div className="border-l border-gray-200 pl-3">
               <div className="font-heading font-semibold text-lg text-foreground">Pantech Marine Services</div>
               <div className="text-xs text-muted-foreground font-medium tracking-wide">DMCEST</div>

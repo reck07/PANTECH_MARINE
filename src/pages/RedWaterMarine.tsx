@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Ship, Phone, Mail, MapPin, Clock, Anchor, Globe, Shield } from 'lucide-react'
+import MarineCoin from '../components/MarineCoin'
 
 export default function RedWaterMarine() {
   useEffect(() => {
@@ -26,18 +27,23 @@ export default function RedWaterMarine() {
           <div className="absolute inset-0" style={{backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px)'}}></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <div className="flex flex-col items-center text-center">
-            <img
-              src="/red_water_logo.png"
-              alt="Red Water Marine Co."
-              className="h-20 md:h-28 w-auto mb-8 object-contain"
-            />
+          <div className="relative flex flex-col items-center text-center bg-gradient-to-br from-red-700 via-[#C02A2E] to-red-800 rounded-2xl px-8 py-12 md:p-14 overflow-hidden">
+            <div className="absolute inset-0 opacity-10 pointer-events-none" style={{backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.06) 10px, rgba(255,255,255,0.06) 20px)'}}></div>
+            <div className="relative z-10 flex flex-col items-center text-center">
+            <MarineCoin size={200} className="mb-8" />
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6">
               Red Water Marine Co.
             </h1>
-            <p className="text-lg md:text-xl text-gray-100 max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-100 max-w-2xl leading-loose mb-10">
               A subsidiary of Pantech Marine Services — providing trusted marine surveying and consulting across Saudi Arabia.
             </p>
+            <a
+              href="tel:+966565286769"
+              className="bg-white text-[#0A1F3D] px-10 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl inline-flex items-center"
+            >
+              Get in Touch
+            </a>
+            </div>
           </div>
         </div>
       </section>

@@ -7,6 +7,7 @@ import Certifications from '../components/Certifications'
 import ClientLogos from '../components/ClientLogos'
 import AdditionalServices from '../components/AdditionalServices'
 import CargoShowcase from '../components/CargoShowcase'
+import MarineCoin from '../components/MarineCoin'
 
 export default function Home() {
   useEffect(() => {
@@ -45,6 +46,9 @@ export default function Home() {
               >
                 Our Services
               </Link>
+            </div>
+            <div className="mt-10 flex justify-center md:justify-start">
+              <MarineCoin size={120} />
             </div>
           </div>
         </div>
