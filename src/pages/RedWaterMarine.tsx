@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { Ship, Phone, Mail, MapPin, Clock, Anchor, Globe, Shield } from 'lucide-react'
-import MarineCoin from '../components/MarineCoin'
 
 export default function RedWaterMarine() {
   useEffect(() => {
@@ -30,7 +29,13 @@ export default function RedWaterMarine() {
           <div className="relative flex flex-col items-center text-center bg-gradient-to-br from-red-700 via-[#C02A2E] to-red-800 rounded-2xl px-8 py-12 md:p-14 overflow-hidden">
             <div className="absolute inset-0 opacity-10 pointer-events-none" style={{backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.06) 10px, rgba(255,255,255,0.06) 20px)'}}></div>
             <div className="relative z-10 flex flex-col items-center text-center">
-            <MarineCoin size={200} className="mb-8" />
+            <img
+              src="/red_water_logo.png"
+              alt="Red Water Marine Co."
+              className="h-20 md:h-28 w-auto mb-8 object-contain"
+              loading="lazy"
+              decoding="async"
+            />
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6">
               Red Water Marine Co.
             </h1>
