@@ -28,7 +28,7 @@ const services = [
 const AdditionalServices = memo(function AdditionalServices() {
   return (
     <section className="py-16 bg-gradient-to-br from-steel-light to-foam-white text-gray-800">
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-heading font-bold text-navy-deep mb-4">Value-Added Services</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">Beyond standard surveys, we offer a range of services to support your entire marine operation.</p>

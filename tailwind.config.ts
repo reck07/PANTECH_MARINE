@@ -16,17 +16,16 @@ export default {
   	extend: {
   		fontFamily: {
   			heading: [
-  				'Montserrat',
-  				'system-ui',
-  				'sans-serif'
+  				'Playfair Display',
+  				'serif'
   			],
   			body: [
-  				'Open Sans',
+  				'Inter',
   				'system-ui',
   				'sans-serif'
   			],
   			sans: [
-  				'DM Sans',
+  				'Inter',
   				'ui-sans-serif',
   				'system-ui',
   				'-apple-system',

@@ -144,7 +144,7 @@ export default function Statistics() {
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px)'}}></div>
       </div>
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
             Trusted by Industry Leaders

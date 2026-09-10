@@ -125,7 +125,7 @@ export default function ChatBot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-4 right-4 md:bottom-6 md:right-6 bg-primary text-white p-4 rounded-full shadow-lg hover:bg-primary/90 transition-all hover:scale-110 z-50"
+                    className="fixed bottom-20 right-4 md:bottom-6 md:right-6 bg-primary text-white p-3 md:p-4 rounded-full shadow-lg hover:bg-primary/90 transition-all hover:scale-110 z-40"
           aria-label="Open chat"
         >
           <MessageCircle className="h-6 w-6" />
@@ -137,7 +137,7 @@ export default function ChatBot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 w-[calc(100vw-2rem)] md:w-96 max-w-[calc(100vw-2rem)] md:max-w-md h-[calc(100vh-8rem)] md:h-[600px] max-h-[calc(100vh-8rem)] md:max-h-[600px] bg-white rounded-lg shadow-2xl flex flex-col z-50 border border-gray-200">
+        <div className="fixed bottom-36 right-4 md:bottom-20 md:right-6 w-[calc(100vw-2rem)] md:w-96 max-w-[calc(100vw-2rem)] md:max-w-md h-[calc(100vh-10rem)] md:h-[500px] max-h-[calc(100vh-10rem)] md:max-h-[500px] bg-white rounded-lg shadow-2xl flex flex-col z-40 border border-gray-200">
           {/* Chat Header */}
           <div className="bg-primary text-white p-4 rounded-t-lg flex items-center justify-between">
             <div className="flex items-center space-x-3">

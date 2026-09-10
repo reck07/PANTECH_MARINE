@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Ship, FileCheck, Shield, Scale, AlertTriangle, Package, CheckCircle, Clipboard, Search, ChevronDown, ChevronUp, X } from 'lucide-react'
 
 export default function Services() {
+  useEffect(() => {
+    document.title = 'Our Services | Pantech Marine Services DMCEST'
+  }, [])
+
   const [searchQuery, setSearchQuery] = useState('')
   const [expandedService, setExpandedService] = useState<number | null>(null)
   
@@ -81,7 +85,7 @@ export default function Services() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px)'}}></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="relative z-10">
           <h1 className="font-heading font-bold text-4xl md:text-5xl mb-4">Our Services</h1>
           <div className="w-24 h-1 bg-white/30 mb-6"></div>
           <p className="text-xl text-gray-100 max-w-3xl leading-relaxed">
@@ -92,7 +96,7 @@ export default function Services() {
 
       {/* Services Grid */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="">
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto mb-12">
             <div className="relative">
@@ -209,7 +213,7 @@ export default function Services() {
 
       {/* Additional Information */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-heading font-bold text-3xl mb-6 text-center">Why Choose Our Services?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

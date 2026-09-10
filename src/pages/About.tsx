@@ -1,6 +1,11 @@
+import { useEffect } from 'react'
 import { Award, Users, MapPin, Calendar } from 'lucide-react'
 
 export default function About() {
+  useEffect(() => {
+    document.title = 'About Us | Pantech Marine Services DMCEST'
+  }, [])
+
   return (
     <div>
       {/* Hero Section */}
@@ -8,7 +13,7 @@ export default function About() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px)'}}></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="relative z-10">
           <h1 className="font-heading font-bold text-4xl md:text-5xl mb-4">About Us</h1>
           <div className="w-24 h-1 bg-white/30 mb-6"></div>
           <p className="text-xl text-gray-100 max-w-3xl leading-relaxed">
@@ -19,7 +24,7 @@ export default function About() {
 
       {/* Main Content */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="">
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none mb-12">
               <h2 className="font-heading font-bold text-3xl mb-6">Our Story</h2>
