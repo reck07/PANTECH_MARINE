@@ -33,13 +33,7 @@ export default function Home() {
               Serving GCC & Mediterranean ports with 24/7 availability for all marine survey needs. Certified, accredited, and trusted by industry leaders.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Link
-                to="/contact"
-                className="group bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl inline-flex items-center justify-center"
-              >
-                Get a Quote
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+
               <Link
                 to="/services"
                 className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all inline-flex items-center justify-center"
@@ -47,8 +41,16 @@ export default function Home() {
                 Our Services
               </Link>
             </div>
-            <div className="mt-10 flex justify-center md:justify-start">
-              <MarineCoin size={120} />
+            <div className="mt-10 flex items-center gap-6 justify-center md:justify-start">
+              <MarineCoin size={84} className="md:hidden" />
+              <MarineCoin size={100} className="hidden md:block" />
+              <img
+                src="/red_water_logo.png"
+                alt="Red Water Marine Co."
+                className="h-[5.25rem] md:h-[6.25rem] w-auto object-contain"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
@@ -195,13 +197,6 @@ export default function Home() {
           <p className="text-xl mb-10 text-gray-100 max-w-2xl mx-auto leading-relaxed">
             Let's discuss how we can assist with your marine survey requirements. Get in touch today for expert consultation.
           </p>
-          <Link
-            to="/contact"
-            className="group bg-white text-primary px-10 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl inline-flex items-center"
-          >
-            Request a Quote
-            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
         </div>
       </section>
     </div>

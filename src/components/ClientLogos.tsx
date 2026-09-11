@@ -36,11 +36,6 @@ const ClientLogos = memo(function ClientLogos() {
             </ScrollReveal>
           ))}
         </div>
-        <div className="text-center mt-12">
-          <p className="text-sm text-muted-foreground italic">
-            <img src="/logo.svg" alt="Pantech Marine" className="h-60 mx-auto opacity-60" />
-          </p>
-        </div>
       </div>
     </section>
   )

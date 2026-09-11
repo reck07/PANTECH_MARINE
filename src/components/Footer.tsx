@@ -11,13 +11,13 @@ export default function Footer() {
               <img
                 src="/logo.svg"
                 alt="Pantech Marine Services Logo"
-                className="h-14 w-auto object-contain brightness-0 invert"
+                className="h-20 w-auto object-contain brightness-0 invert"
               />
               <Link to="/red-water-marine">
                 <img
                   src="/red_water_logo.png"
                   alt="Red Water Marine Co. logo"
-                  className="h-12 w-auto object-contain"
+                  className="h-20 w-auto object-contain"
                   loading="lazy"
                   decoding="async"
                 />

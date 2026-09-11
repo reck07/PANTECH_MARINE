@@ -82,19 +82,38 @@ export default function Contact() {
       }, 5000)
     } catch (error) {
       console.error('Form submission error:', error)
-      // Backend unavailable (it only logs, never emails) — fall back to mailto
-      const subject = encodeURIComponent(`Website inquiry from ${formData.name} — ${formData.service || 'General'}`)
-      const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\n\n${formData.message}`)
-      window.location.href = `mailto:operations@pantechmarine.com?subject=${subject}&body=${body}`
-      const fallbackMessage = 'Our server is unreachable, so we opened your email app with the message pre-filled. Just press send — or call us at +971 4 234 5678.'
-      setSubmitStatus({
-        type: 'success',
-        message: fallbackMessage
-      })
-      toast.success('Opening your email app…', {
-        description: fallbackMessage,
-        duration: 6000,
-      })
+      // Backend unavailable (it only logs, never emails) — send via FormSubmit to operations@pantechmarine.com
+      try {
+        const fsResponse = await fetch('https://formsubmit.co/ajax/operations@pantechmarine.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            service: formData.service,
+            message: formData.message,
+            _subject: `Website inquiry from ${formData.name} — ${formData.service || 'General'}`,
+          }),
+        })
+        if (!fsResponse.ok) throw new Error('Email service failed')
+        const deliveredMessage = 'Thank you for your inquiry. Your message has been sent to operations@pantechmarine.com — we will contact you soon.'
+        setSubmitStatus({ type: 'success', message: deliveredMessage })
+        toast.success('Message sent successfully!', { description: deliveredMessage, duration: 5000 })
+        setFormData({ name: '', email: '', phone: '', service: '', message: '' })
+        setErrors({})
+        setTimeout(() => {
+          setSubmitStatus({ type: null, message: '' })
+        }, 5000)
+      } catch {
+        // Last resort: open the visitor's email app pre-addressed to operations@pantechmarine.com
+        const subject = encodeURIComponent(`Website inquiry from ${formData.name} — ${formData.service || 'General'}`)
+        const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\n\n${formData.message}`)
+        window.location.href = `mailto:operations@pantechmarine.com?subject=${subject}&body=${body}`
+        const fallbackMessage = 'Our email service is unreachable, so we opened your email app addressed to operations@pantechmarine.com with the message pre-filled. Just press send — or call us at +971 4 234 5678.'
+        setSubmitStatus({ type: 'success', message: fallbackMessage })
+        toast.success('Opening your email app…', { description: fallbackMessage, duration: 6000 })
+      }
     } finally {
       setIsSubmitting(false)
     }
@@ -114,7 +133,7 @@ export default function Contact() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px)'}}></div>
         </div>
-        <div className="relative z-10">
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
           <h1 className="font-heading font-bold text-4xl md:text-5xl mb-4">Contact Us</h1>
           <div className="w-24 h-1 bg-white/30 mb-6"></div>
           <p className="text-xl text-gray-100 max-w-3xl leading-relaxed">
@@ -125,8 +144,7 @@ export default function Contact() {
 
       {/* Contact Section */}
       <section className="py-16">
-        <div className="">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto px-4">
             {/* Contact Information */}
             <div>
               <h2 className="font-heading font-bold text-3xl mb-6">Get in Touch</h2>
@@ -322,7 +340,6 @@ export default function Contact() {
               </form>
             </div>
           </div>
-        </div>
       </section>
     </div>
   )

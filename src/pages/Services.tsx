@@ -85,7 +85,7 @@ export default function Services() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px)'}}></div>
         </div>
-        <div className="relative z-10">
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
           <h1 className="font-heading font-bold text-4xl md:text-5xl mb-4">Our Services</h1>
           <div className="w-24 h-1 bg-white/30 mb-6"></div>
           <p className="text-xl text-gray-100 max-w-3xl leading-relaxed">
@@ -96,7 +96,7 @@ export default function Services() {
 
       {/* Services Grid */}
       <section className="py-16">
-        <div className="">
+        <div className="max-w-7xl mx-auto px-4">
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto mb-12">
             <div className="relative">
