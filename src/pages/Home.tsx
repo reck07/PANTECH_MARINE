@@ -7,7 +7,6 @@ import Certifications from '../components/Certifications'
 import ClientLogos from '../components/ClientLogos'
 import AdditionalServices from '../components/AdditionalServices'
 import CargoShowcase from '../components/CargoShowcase'
-import MarineCoin from '../components/MarineCoin'
 
 export default function Home() {
   useEffect(() => {
@@ -42,8 +41,11 @@ export default function Home() {
               </Link>
             </div>
             <div className="mt-10 flex items-center gap-6 justify-center md:justify-start">
-              <MarineCoin size={84} className="md:hidden" />
-              <MarineCoin size={100} className="hidden md:block" />
+              <img
+                src="/logo.svg"
+                alt="Pantech Marine Services Logo"
+                className="h-[5.25rem] md:h-[6.25rem] w-auto object-contain brightness-0 invert"
+              />
               <img
                 src="/red_water_logo.png"
                 alt="Red Water Marine Co."
