@@ -17,7 +17,7 @@ export default function LoadingSkeleton({
         {Array.from({ length: lines }).map((_, i) => (
           <div
             key={i}
-            className={`${baseClasses} h-4 mb-2 ${i === lines - 1 ? 'w-3/4' : 'w-full'}`}
+            className={`${baseClasses} h-4 mb-2 ${i === lines - 1 ? 'w-[75%]' : 'w-full'}`}
           />
         ))}
       </div>
@@ -36,9 +36,9 @@ export default function LoadingSkeleton({
   return (
     <div className={`${baseClasses} p-6 ${className}`}>
       <div className={`${baseClasses} h-8 w-8 rounded-full mb-4`} />
-      <div className={`${baseClasses} h-6 w-3/4 mb-2`} />
+      <div className={`${baseClasses} h-6 w-[75%] mb-2`} />
       <div className={`${baseClasses} h-4 w-full mb-2`} />
-      <div className={`${baseClasses} h-4 w-5/6`} />
+      <div className={`${baseClasses} h-4 w-[83%]`} />
     </div>
   )
 }

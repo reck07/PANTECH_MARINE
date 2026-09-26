@@ -1,10 +1,17 @@
 import { useState, useEffect } from 'react'
-import { Ship, FileCheck, Shield, Scale, AlertTriangle, Package, CheckCircle, Clipboard, Search, ChevronDown, ChevronUp, X } from 'lucide-react'
+import { Ship, FileCheck, Shield, Scale, AlertTriangle, Package, CheckCircle, Clipboard, ChevronDown, ChevronUp } from 'lucide-react'
+import SEO from '../components/SEO'
+import { organizationSchema, breadcrumbSchema } from '../components/SEO'
 
 export default function Services() {
   useEffect(() => {
     document.title = 'Our Services | Pantech Marine Services DMCEST'
   }, [])
+
+  const breadcrumbs = [
+    { name: 'Home', url: 'https://pantech-marine.vercel.app/' },
+    { name: 'Services', url: 'https://pantech-marine.vercel.app/services' }
+  ]
 
   const [searchQuery, setSearchQuery] = useState('')
   const [expandedService, setExpandedService] = useState<number | null>(null)
@@ -79,12 +86,22 @@ export default function Services() {
   ]
 
   return (
-    <div>
+    <>
+      <SEO
+        title="Our Services - Comprehensive Marine Survey & Consulting"
+        description="Comprehensive marine survey and consulting services: Marine Claims, Heavy Lift Cargo, Classification Surveys, Draft Surveys, P&I Surveys, Risk Assessments. Serving GCC & Mediterranean ports with 24/7 availability."
+        canonical="https://pantech-marine.vercel.app/services"
+        structuredData={{
+          '@graph': [
+            organizationSchema,
+            breadcrumbSchema(breadcrumbs)
+          ]
+        }}
+      />
+      <div>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-navy-deep via-primary to-steel-dark text-white py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px)'}}></div>
-        </div>
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px)" }}></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <h1 className="font-heading font-bold text-4xl md:text-5xl mb-4">Our Services</h1>
           <div className="w-24 h-1 bg-white/30 mb-6"></div>
@@ -100,7 +117,6 @@ export default function Services() {
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto mb-12">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search services..."
@@ -108,14 +124,6 @@ export default function Services() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               />
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery('')}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                >
-                  <X className="h-5 w-5" />
-                </button>
-              )}
             </div>
           </div>
 
@@ -213,8 +221,7 @@ export default function Services() {
 
       {/* Additional Information */}
       <section className="py-16 bg-gray-50">
-        <div className="">
-          <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto">
             <h2 className="font-heading font-bold text-3xl mb-6 text-center">Why Choose Our Services?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg">
@@ -247,9 +254,8 @@ export default function Services() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
     </div>
-  )
+  </>
+)
 }
-

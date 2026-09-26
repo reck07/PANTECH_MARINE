@@ -25,10 +25,31 @@ export default function ChatBot() {
   const [isLoading, setIsLoading] = useState(false)
   const [connectionError, setConnectionError] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const chatWindowRef = useRef<HTMLDivElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
+
+  // Focus management
+  useEffect(() => {
+    if (isOpen) {
+      // Focus the input when chat opens
+      setTimeout(() => inputRef.current?.focus(), 100)
+    }
+  }, [isOpen])
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isOpen])
 
   useEffect(() => {
     scrollToBottom()
@@ -121,45 +142,60 @@ export default function ChatBot() {
 
   return (
     <>
-      {/* Chat Button */}
-      {!isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-                    className="fixed bottom-20 right-4 md:bottom-6 md:right-6 bg-primary text-white p-3 md:p-4 rounded-full shadow-lg hover:bg-primary/90 transition-all hover:scale-110 z-40"
-          aria-label="Open chat"
-        >
-          <MessageCircle className="h-6 w-6" />
-          <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-            1
-          </span>
-        </button>
-      )}
+      {/* WhatsApp Button - Fixed position, moves up when chat is open on mobile */}
+      <a
+        href="https://wa.me/97142345678"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`fixed z-40 flex items-center justify-center bg-green-500 text-white p-3 md:p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 ${
+          isOpen
+            ? 'bottom-16 right-4 md:bottom-[calc(100vh-5rem+6rem)] md:right-6'
+            : 'bottom-6 right-4 md:bottom-6 md:right-6'
+        }`}
+        aria-label="Contact us on WhatsApp"
+      >
+        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.265.119.472.15.671.15.272 0 .469-.026.6-.076l1.617-1.443c.051-.044.2-.137.271-.342.178-.52-.208-.96-.53-1.236-.19-.16-.342-.19-.53-.184zM12 2C6.477 2 2 6.477 2 12c0 2.18.695 4.17 1.863 5.835L2 22l5.405-1.768c1.337.75 2.84 1.29 4.408 1.29 5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+        </svg>
+      </a>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-36 right-4 md:bottom-20 md:right-6 w-[calc(100vw-2rem)] md:w-96 max-w-[calc(100vw-2rem)] md:max-w-md h-[calc(100vh-10rem)] md:h-[500px] max-h-[calc(100vh-10rem)] md:max-h-[500px] bg-white rounded-lg shadow-2xl flex flex-col z-40 border border-gray-200">
+        <div 
+          ref={chatWindowRef}
+          className="fixed bottom-16 right-4 md:bottom-20 md:right-6 w-[calc(100vw-2rem)] md:w-96 max-w-[calc(100vw-2rem)] md:max-w-md h-[calc(100vh-5rem)] md:h-[500px] max-h-[calc(100vh-5rem)] md:max-h-[500px] bg-white rounded-lg shadow-2xl flex flex-col z-50 border border-gray-200 animate-slide-up"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="chat-title"
+          aria-describedby="chat-description"
+        >
           {/* Chat Header */}
-          <div className="bg-primary text-white p-4 rounded-t-lg flex items-center justify-between">
+          <div className="bg-primary text-white p-3 rounded-t-lg flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="bg-white/20 p-2 rounded-full">
-                <img src="/logo.svg" alt="Pantech Marine Services Logo" className="h-5 w-5 object-contain brightness-0 invert" />
+                <img src="/color-replaced.png" alt="" className="h-5 w-5 object-contain filter brightness-0 invert" aria-hidden="true" />
               </div>
               <div>
-                <h3 className="font-semibold">Pantech Marine Services</h3>
-                <p className="text-xs text-white/80">Online • Typically replies instantly</p>
+                <h3 id="chat-title" className="font-semibold">Pantech Marine Services</h3>
+                <p id="chat-description" className="text-xs text-white/80">Online • Typically replies instantly</p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="hover:bg-white/20 p-1 rounded transition-colors"
+              className="hover:bg-white/20 p-1 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
               aria-label="Close chat"
             >
-              <X className="h-5 w-5" />
+              <X className="h-5 w-5" aria-hidden="true" />
             </button>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+          <div 
+            className="flex-1 min-h-0 overflow-y-auto p-1.5 space-y-1.5 bg-gray-50" 
+            role="log"
+            aria-live="polite"
+            aria-label="Chat messages"
+          >
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -176,11 +212,12 @@ export default function ChatBot() {
                         ? 'bg-primary text-white'
                         : 'bg-gray-200 text-gray-700'
                     }`}
+                    aria-hidden="true"
                   >
                     {message.sender === 'user' ? (
                       <User className="h-4 w-4" />
                     ) : (
-                      <img src="/logo.svg" alt="Pantech Marine Services Logo" className="h-4 w-4 object-contain brightness-0 invert" />
+                      <img src="/color-replaced.png" alt="" className="h-4 w-4 object-contain filter brightness-0 invert" />
                     )}
                   </div>
                   <div
@@ -191,10 +228,11 @@ export default function ChatBot() {
                         ? 'bg-yellow-50 text-gray-800 border border-yellow-200'
                         : 'bg-white text-gray-800 border border-gray-200'
                     }`}
+                    role={message.sender === 'user' ? 'none' : 'none'}
                   >
                     {message.error && (
-                      <div className="flex items-center gap-1 mb-1 text-yellow-700">
-                        <AlertCircle className="h-3 w-3" />
+                      <div className="flex items-center gap-1 mb-1 text-yellow-700" role="alert">
+                        <AlertCircle className="h-3 w-3" aria-hidden="true" />
                         <span className="text-xs font-semibold">Connection Issue</span>
                       </div>
                     )}
@@ -227,9 +265,9 @@ export default function ChatBot() {
 
           {/* Quick Questions */}
           {messages.length === 1 && (
-            <div className="px-4 py-2 bg-white border-t border-gray-200">
-              <p className="text-xs text-gray-500 mb-2">Quick questions:</p>
-              <div className="flex flex-wrap gap-2">
+            <div className="px-3 py-1.5 bg-white border-t border-gray-200">
+              <p className="text-[11px] text-gray-500 mb-1.5">Quick questions:</p>
+              <div className="flex flex-wrap gap-1.5">
                 {quickQuestions.map((q, idx) => (
                   <button
                     key={idx}
@@ -237,7 +275,7 @@ export default function ChatBot() {
                       setInput(q)
                       setTimeout(() => handleSend(), 100)
                     }}
-                    className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full transition-colors"
+                    className="text-[11px] bg-gray-100 hover:bg-gray-200 px-2.5 py-0.5 rounded-full transition-colors"
                   >
                     {q}
                   </button>
@@ -247,23 +285,25 @@ export default function ChatBot() {
           )}
 
           {/* Input Area */}
-          <div className="p-4 bg-white border-t border-gray-200 rounded-b-lg">
+          <div className="p-2 bg-white border-t border-gray-200 rounded-b-lg">
             <div className="flex space-x-2">
               <input
+                ref={inputRef}
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
-                className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="flex-1 border border-gray-300 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                aria-label="Type your message"
               />
               <button
                 onClick={handleSend}
                 disabled={!input.trim() || isLoading}
-                className="bg-primary text-white p-2 rounded-lg hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="bg-primary text-white p-1.5 rounded-lg hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 aria-label="Send message"
               >
-                <Send className="h-5 w-5" />
+                <Send className="h-4 w-4" />
               </button>
             </div>
           </div>

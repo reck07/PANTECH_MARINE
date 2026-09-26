@@ -1,4 +1,18 @@
+# Pantech Marine Services - Robots.txt
+# Allows all search engines to crawl the site
+
 User-agent: *
 Allow: /
 
+# Disallow admin or private paths (if any)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap location
 Sitemap: https://pantech-marine.vercel.app/sitemap.xml
+
+# Host directive
+Host: https://pantech-marine.vercel.app
+
+# Crawl-delay (optional, be respectful)
+# Crawl-delay: 10

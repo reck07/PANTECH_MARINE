@@ -9,9 +9,9 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-4 mb-4">
               <img
-                src="/logo.svg"
+                src="/color-replaced.png"
                 alt="Pantech Marine Services Logo"
-                className="h-20 w-auto object-contain brightness-0 invert"
+                className="h-16 w-auto object-contain filter brightness-0 invert"
               />
               <Link to="/red-water-marine">
                 <img

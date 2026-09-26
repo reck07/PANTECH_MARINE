@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Menu, Phone, Mail, Shield, Clock } from 'lucide-react'
+import { Menu, Phone, Mail } from 'lucide-react'
 import { useState } from 'react'
 import MarineCoin from './MarineCoin'
 
@@ -7,29 +7,8 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
-      {/* Trust Banner */}
-      <div className="bg-gradient-to-r from-primary/8 via-primary/5 to-primary/8 border-b border-primary/10 overflow-hidden">
-        <div className="py-3 px-4">
-          <div className="flex items-center justify-center gap-2 sm:gap-4 md:gap-6 text-[10px] md:text-xs whitespace-nowrap">
-            <div className="flex items-center gap-1.5 text-primary shrink-0">
-              <Shield className="h-3 w-3 md:h-3.5 md:w-3.5" />
-              <span className="font-semibold">Certified</span>
-            </div>
-            <div className="w-px h-4 bg-primary/20 shrink-0"></div>
-            <div className="flex items-center gap-1.5 text-primary shrink-0">
-              <Clock className="h-3 w-3 md:h-3.5 md:w-3.5" />
-              <span className="font-semibold">24/7</span>
-            </div>
-            <div className="w-px h-4 bg-primary/20 shrink-0"></div>
-            <div className="text-primary shrink-0">
-              <span className="font-semibold">40+ Years</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="py-4 bg-white px-4">
+    <header className="sticky top-0 z-50">
+      <div className="py-4 bg-white/60 backdrop-blur-lg px-4 border-b border-gray-100/30">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <Link to="/" className="flex items-center space-x-3 group">
             <MarineCoin size={64} className="shrink-0" />
@@ -77,31 +56,33 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 space-y-4">
-            <Link to="/" className="block text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Home
-            </Link>
-            <Link to="/about" className="block text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-              About
-            </Link>
-            <Link to="/services" className="block text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Services
-            </Link>
-            <Link to="/contact" className="block text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Contact
-            </Link>
-            <Link to="/red-water-marine" className="block text-foreground hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Red Water Marine
-            </Link>
-            <div className="pt-4 border-t space-y-2">
-              <a href="tel:+97142345678" className="flex items-center space-x-2 text-primary">
-                <Phone className="h-4 w-4" />
-                <span>+971 4 234 5678</span>
-              </a>
-              <a href="mailto:operations@pantechmarine.com" className="flex items-center space-x-2 text-primary">
-                <Mail className="h-4 w-4" />
-                <span>operations@pantechmarine.com</span>
-              </a>
+          <nav className="md:hidden animate-slide-in-right">
+            <div className="pt-4 pb-4 space-y-2 border-t border-gray-200">
+              <Link to="/" className="block px-4 py-3 text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors" onClick={() => setIsMenuOpen(false)}>
+                Home
+              </Link>
+              <Link to="/about" className="block px-4 py-3 text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors" onClick={() => setIsMenuOpen(false)}>
+                About
+              </Link>
+              <Link to="/services" className="block px-4 py-3 text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors" onClick={() => setIsMenuOpen(false)}>
+                Services
+              </Link>
+              <Link to="/contact" className="block px-4 py-3 text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors" onClick={() => setIsMenuOpen(false)}>
+                Contact
+              </Link>
+              <Link to="/red-water-marine" className="block px-4 py-3 text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors" onClick={() => setIsMenuOpen(false)}>
+                Red Water Marine
+              </Link>
+              <div className="pt-2 border-t border-gray-200 space-y-2">
+                <a href="tel:+97142345678" className="flex items-center space-x-3 px-4 py-3 text-primary hover:bg-primary/5 rounded-lg transition-colors">
+                  <Phone className="h-5 w-5" />
+                  <span className="font-medium">+971 4 234 5678</span>
+                </a>
+                <a href="mailto:operations@pantechmarine.com" className="flex items-center space-x-3 px-4 py-3 text-primary hover:bg-primary/5 rounded-lg transition-colors">
+                  <Mail className="h-5 w-5" />
+                  <span className="font-medium">operations@pantechmarine.com</span>
+                </a>
+              </div>
             </div>
           </nav>
         )}

@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0A1F3D" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
     <!-- Primary SEO -->
     <title>Pantech Marine Services DMCEST | Marine Cargo Surveyors & Consultants</title>
     <meta name="description" content="Trusted marine surveyors and consultants since 1982. Specialists in marine claims, heavy lift cargo, classification surveys & risk assessments across UAE, KSA, GCC & Mediterranean ports. 24/7 availability." />
@@ -12,35 +17,132 @@
     <meta name="author" content="Pantech Marine Services DMCEST" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://pantech-marine.vercel.app/" />
+    
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Pantech Marine Services DMCEST | Marine Cargo Surveyors" />
     <meta property="og:description" content="Trusted marine surveyors and consultants serving GCC & Mediterranean ports since 1982. 24/7 availability for all marine survey needs." />
     <meta property="og:site_name" content="Pantech Marine Services" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="https://pantech-marine.vercel.app/og-image.png" />
+    <meta property="og:url" content="https://pantech-marine.vercel.app/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_SA" />
+    
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pantech Marine Services DMCEST" />
     <meta name="twitter:description" content="Marine cargo surveyors & consultants you can trust. Serving GCC & Mediterranean ports since 1982." />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
+    <meta name="twitter:image" content="https://pantech-marine.vercel.app/og-image.png" />
+    <meta name="twitter:site" content="@pantechmarine" />
+    <meta name="twitter:creator" content="@pantechmarine" />
+    
     <!-- instagram -->
     <meta name="instagram:card" content="summary_large_image" />
     <meta name="instagram:title" content="Pantech Marine Services DMCEST" />
     <meta name="instagram:description" content="Marine cargo surveyors & consultants you can trust. Serving GCC & Mediterranean ports since 1982." />
-    <meta name="instagram:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="instagram:image" content="https://pantech-marine.vercel.app/og-image.png" />
+    
     <!-- linkedin -->
     <meta name="linkedin:card" content="summary_large_image" />
     <meta name="linkedin:title" content="Pantech Marine Services DMCEST" />
     <meta name="linkedin:description" content="Marine cargo surveyors & consultants you can trust. Serving GCC & Mediterranean ports since 1982." />
-    <meta name="linkedin:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="linkedin:image" content="https://pantech-marine.vercel.app/og-image.png" />
+    
     <!-- Geo Tags -->
     <meta name="geo.region" content="AE-DU" />
     <meta name="geo.placename" content="Dubai" />
-    <!-- Google Fonts: Playfair Display (headings) + Inter (body) -->
+    <meta name="geo.position" content="25.2048;55.2708" />
+    <meta name="ICBM" content="25.2048, 55.2708" />
+    
+    <!-- Mobile & PWA -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Pantech Marine" />
+    <meta name="format-detection" content="telephone=yes" />
+    
+    <!-- Performance Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://pantech-marine.vercel.app" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    
+    <!-- Google Fonts: Playfair Display (headings) + Inter (body) - Non-blocking -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" /></noscript>
+    
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="/color-replaced.png" />
+    <link rel="preload" as="image" href="/red_water_logo.png" />
+    
+    <!-- Structured Data (Organization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Pantech Marine Services DMCEST",
+      "url": "https://pantech-marine.vercel.app/",
+      "logo": "https://pantech-marine.vercel.app/color-replaced.png",
+      "sameAs": [
+        "https://www.instagram.com/pantechmarineservices/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+971-4-234-5678",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Arabic"],
+        "hoursAvailable": "24/7"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data (LocalBusiness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Pantech Marine Services DMCEST",
+      "description": "Trusted marine surveyors and consultants since 1982. Specialists in marine claims, heavy lift cargo, classification surveys & risk assessments across UAE, KSA, GCC & Mediterranean ports.",
+      "url": "https://pantech-marine.vercel.app/",
+      "telephone": "+971-4-234-5678",
+      "email": "operations@pantechmarine.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dubai",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.2048,
+        "longitude": 55.2708
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "priceRange": "$$$",
+      "currenciesAccepted": "AED, USD, SAR",
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+      "areaServed": ["UAE", "Saudi Arabia", "GCC Countries", "Mediterranean Ports"],
+      "serviceType": [
+        "Marine Claims",
+        "Heavy Lift Cargo",
+        "Classification Surveys",
+        "Draft Surveys",
+        "P&I Surveys",
+        "Risk Assessments"
+      ]
+    }
+    </script>
   </head>
 
   <body>

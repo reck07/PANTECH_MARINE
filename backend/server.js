@@ -1,22 +1,35 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { OpenAI } from 'openai';
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-// Knowledge base for chatbot responses
-const knowledgeBase = {
-  services: {
-    keywords: ['service', 'services', 'offer', 'offering', 'what do you do', 'what can you help'],
-    response: `We offer comprehensive marine survey and consulting services including:
+// Initialize OpenRouter client (OpenRouter is compatible with OpenAI's API)
+const openai = new OpenAI({
+  apiKey: process.env.OPENROUTER_API_KEY,
+  baseURL: 'https://openrouter.ai/api/v1',
+});
+
+// System prompt for the chatbot
+const SYSTEM_PROMPT = `
+You are Pantech Marine Services' AI assistant. You provide helpful, accurate information about our marine survey and consulting company.
+
+Company Information:
+- Name: Pantech Marine Services
+- Established: 1982 (over 40 years of experience)
+- Location: Dubai, United Arab Emirates
+- Service Area: GCC & Mediterranean ports
+- Contact: +971 4 234 5678 (24/7), operations@pantechmarine.com
+- Completed: 15,000+ surveys
+
+Services Offered:
 • Marine Claims - Expert assessment and documentation for insurance claims
 • Heavy Lift Cargo - Specialized surveys for oversized cargo shipments
 • Classification Surveys - Vessel and cargo classification inspections
@@ -24,87 +37,14 @@ const knowledgeBase = {
 • P&I Surveys - Protection and Indemnity surveys
 • Risk Assessments - Comprehensive risk evaluation
 
-All services are available 24/7 across GCC & Mediterranean ports.`
-  },
-  contact: {
-    keywords: ['contact', 'phone', 'email', 'reach', 'get in touch', 'how to contact'],
-    response: `You can reach us through:
-📞 Phone: +971 4 234 5678 (Available 24/7)
-📧 Email: operations@pantechmarine.com
-📍 Location: Dubai, United Arab Emirates
-🌍 Service Area: GCC & Mediterranean ports
+Key Points to Emphasize:
+• We offer 24/7 emergency service
+• Fully certified and accredited marine surveyors
+• International recognition and certifications
+• Extensive regional coverage across GCC and Mediterranean
 
-We typically respond within 24 hours, but for urgent matters, please call our 24/7 hotline.`
-  },
-  availability: {
-    keywords: ['24/7', 'available', 'availability', 'hours', 'when', 'time', 'emergency'],
-    response: `Yes! We provide 24/7 emergency service for all marine survey needs. Our team is available round-the-clock to assist with urgent requirements across all time zones. Whether it's a weekend, holiday, or late night, we're here to help.`
-  },
-  certifications: {
-    keywords: ['certification', 'certified', 'accredited', 'qualification', 'credentials', 'license'],
-    response: `We are fully certified and accredited marine surveyors and consultants with international recognition. Our team holds various certifications and accreditations that demonstrate our expertise and commitment to industry standards. We've been serving the industry since 1982 with a proven track record.`
-  },
-  experience: {
-    keywords: ['experience', 'years', 'established', 'since', 'history', 'background', 'how long'],
-    response: `Pantech Marine Services has been serving the industry since 1982 - that's over 40 years of excellence! We've completed 15,000+ surveys and have extensive expertise in marine surveying across GCC and Mediterranean ports.`
-  },
-  quote: {
-    keywords: ['quote', 'price', 'cost', 'pricing', 'fee', 'charge', 'how much'],
-    response: `To get a customized quote for your specific needs, please contact us:
-📞 Call: +971 4 234 5678
-📧 Email: operations@pantechmarine.com
-📝 Or fill out our contact form on the website
-
-Our pricing depends on the type of survey, location, and specific requirements. We'll provide a detailed quote after understanding your needs.`
-  },
-  location: {
-    keywords: ['location', 'where', 'dubai', 'uae', 'gcc', 'mediterranean', 'ports', 'coverage'],
-    response: `We're based in Dubai, United Arab Emirates, and serve:
-• UAE ports
-• GCC region (Saudi Arabia, Kuwait, Qatar, Bahrain, Oman)
-• Mediterranean ports
-
-Our extensive regional coverage allows us to provide timely service across these areas.`
-  },
-  default: {
-    response: `I'm here to help with questions about Pantech Marine Services. I can assist with:
-• Our services and offerings
-• Contact information
-• Availability and emergency services
-• Certifications and credentials
-• Getting a quote
-• Company information
-
-Feel free to ask me anything, or use the quick questions below!`
-  }
-};
-
-// Function to find the best matching response
-function getChatResponse(message) {
-  const lowerMessage = message.toLowerCase();
-  
-  // Check each knowledge base category
-  for (const [key, data] of Object.entries(knowledgeBase)) {
-    if (key === 'default') continue;
-    
-    const matches = data.keywords.some(keyword => 
-      lowerMessage.includes(keyword.toLowerCase())
-    );
-    
-    if (matches) {
-      return data.response;
-    }
-  }
-  
-  // Check for greeting
-  const greetings = ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening'];
-  if (greetings.some(g => lowerMessage.includes(g))) {
-    return `Hello! Welcome to Pantech Marine Services. ${knowledgeBase.default.response}`;
-  }
-  
-  // Default response
-  return knowledgeBase.default.response;
-}
+Always be professional, helpful, and concise. If asked about something outside your knowledge, politely direct them to contact us directly at +971 4 234 5678 or operations@pantechmarine.com.
+`;
 
 // Routes
 app.get('/', (req, res) => {
@@ -130,7 +70,17 @@ app.post('/api/chat', async (req, res) => {
     // Simulate a small delay for more natural conversation
     await new Promise(resolve => setTimeout(resolve, 500));
     
-    const reply = getChatResponse(message.trim());
+    const completion = await openai.chat.completions.create({
+      model: 'anthropic/claude-haiku-4.5',
+      messages: [
+        { role: 'system', content: SYSTEM_PROMPT },
+        { role: 'user', content: message.trim() }
+      ],
+      max_tokens: 500,
+      temperature: 0.7,
+    });
+    
+    const reply = completion.choices[0]?.message?.content || 'I apologize, but I couldn\'t generate a response. Please try again.';
     
     res.json({ 
       reply,

@@ -7,14 +7,33 @@ import Certifications from '../components/Certifications'
 import ClientLogos from '../components/ClientLogos'
 import AdditionalServices from '../components/AdditionalServices'
 import CargoShowcase from '../components/CargoShowcase'
+import SEO from '../components/SEO'
+import { organizationSchema, localBusinessSchema, breadcrumbSchema } from '../components/SEO'
 
 export default function Home() {
   useEffect(() => {
     document.title = 'Pantech Marine Services DMCEST | Marine Cargo Surveyors & Consultants'
   }, [])
 
+  const breadcrumbs = [
+    { name: 'Home', url: 'https://pantech-marine.vercel.app/' }
+  ]
+
   return (
-    <div>
+    <>
+      <SEO
+        title="Trusted Marine Surveyors & Consultants Since 1982"
+        description="Trusted marine surveyors and consultants since 1982. Specialists in marine claims, heavy lift cargo, classification surveys & risk assessments across UAE, KSA, GCC & Mediterranean ports. 24/7 availability."
+        canonical="https://pantech-marine.vercel.app/"
+        structuredData={{
+          '@graph': [
+            organizationSchema,
+            localBusinessSchema,
+            breadcrumbSchema(breadcrumbs)
+          ]
+        }}
+      />
+      <div>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-navy-deep via-primary to-steel-dark text-white pt-20 pb-28 md:py-32 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -31,25 +50,16 @@ export default function Home() {
             <p className="text-lg md:text-xl mb-10 text-gray-100 max-w-2xl leading-relaxed mx-auto md:mx-0">
               Serving GCC & Mediterranean ports with 24/7 availability for all marine survey needs. Certified, accredited, and trusted by industry leaders.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-
-              <Link
-                to="/services"
-                className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all inline-flex items-center justify-center"
-              >
-                Our Services
-              </Link>
-            </div>
             <div className="mt-10 flex items-center gap-6 justify-center md:justify-start">
               <img
-                src="/logo.svg"
+                src="/color-replaced.png"
                 alt="Pantech Marine Services Logo"
-                className="h-[5.25rem] md:h-[6.25rem] w-auto object-contain brightness-0 invert"
+                className="h-[4.5rem] md:h-[5.5rem] w-auto object-contain filter brightness-0 invert"
               />
               <img
                 src="/red_water_logo.png"
                 alt="Red Water Marine Co."
-                className="h-[5.25rem] md:h-[6.25rem] w-auto object-contain"
+                className="h-[4.5rem] md:h-[5.5rem] w-auto object-contain"
                 loading="lazy"
                 decoding="async"
               />
@@ -202,5 +212,6 @@ export default function Home() {
         </div>
       </section>
     </div>
-  )
+  </>
+)
 }

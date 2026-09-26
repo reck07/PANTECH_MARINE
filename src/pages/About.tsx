@@ -1,13 +1,32 @@
 import { useEffect } from 'react'
 import { Award, Users, MapPin, Calendar } from 'lucide-react'
+import SEO from '../components/SEO'
+import { organizationSchema, breadcrumbSchema } from '../components/SEO'
 
 export default function About() {
   useEffect(() => {
     document.title = 'About Us | Pantech Marine Services DMCEST'
   }, [])
 
+  const breadcrumbs = [
+    { name: 'Home', url: 'https://pantech-marine.vercel.app/' },
+    { name: 'About Us', url: 'https://pantech-marine.vercel.app/about' }
+  ]
+
   return (
-    <div>
+    <>
+      <SEO
+        title="About Us - 40+ Years of Marine Survey Excellence"
+        description="Leading marine surveyors and consultants with over four decades of experience. Established in 1982, serving UAE, KSA, GCC countries, and Mediterranean ports with certified expertise."
+        canonical="https://pantech-marine.vercel.app/about"
+        structuredData={{
+          '@graph': [
+            organizationSchema,
+            breadcrumbSchema(breadcrumbs)
+          ]
+        }}
+      />
+      <div>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-navy-deep via-primary to-steel-dark text-white py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -95,6 +114,7 @@ export default function About() {
           </div>
       </section>
     </div>
-  )
+  </>
+)
 }
 
