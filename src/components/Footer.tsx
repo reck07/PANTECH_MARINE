@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="flex items-center gap-4 mb-4">
               <img
                 src="/color-replaced.png"
-                alt="Pantech Marine Services Logo"
+                alt="Pantech Marine Group Logo"
                 className="h-16 w-auto object-contain filter brightness-0 invert"
               />
               <Link to="/red-water-marine">
@@ -24,7 +24,7 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-gray-300 text-sm">
-              Trusted marine surveyors and consultants since 1982. Serving GCC & Mediterranean ports.
+              Trusted marine surveyors since 1982. Surveying roots in Dammam, UAE expansion 2010.
             </p>
             <div className="flex gap-4 mt-4">
               <a href="https://www.instagram.com/pantechmarineservices/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors" aria-label="Instagram">
@@ -49,11 +49,11 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-300 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>Dubai, UAE</span>
+                <span>Dubai, UAE (Pantech Marine Services DMCEST)</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <a href="tel:+97142345678" className="hover:text-white">+971 4 234 5678</a>
+                <a href="tel:+971552294871" className="hover:text-white">+971 55 229 4871</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0" />
@@ -65,14 +65,14 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <a href="tel:+966565286769" className="hover:text-white">+966 56 528 6769</a>
+                <a href="tel:+966565286769" className="hover:text-white">+971 55 229 4871</a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-xs">
-          <p>&copy; {new Date().getFullYear()} Pantech Marine Services DMCEST. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Pantech Marine Group DMCEST. All rights reserved.</p>
         </div>
       </div>
     </footer>

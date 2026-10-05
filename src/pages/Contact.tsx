@@ -8,7 +8,7 @@ const API_URL = (import.meta.env?.VITE_API_URL as string) || 'http://localhost:3
 
 export default function Contact() {
   useEffect(() => {
-    document.title = 'Contact Us | Pantech Marine Services DMCEST'
+    document.title = 'Contact Us | Pantech Marine Group DMCEST'
   }, [])
 
   const breadcrumbs = [
@@ -117,7 +117,7 @@ export default function Contact() {
         const subject = encodeURIComponent(`Website inquiry from ${formData.name} — ${formData.service || 'General'}`)
         const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\n\n${formData.message}`)
         window.location.href = `mailto:operations@pantechmarine.com?subject=${subject}&body=${body}`
-        const fallbackMessage = 'Our email service is unreachable, so we opened your email app addressed to operations@pantechmarine.com with the message pre-filled. Just press send — or call us at +971 4 234 5678.'
+        const fallbackMessage = 'Our email service is unreachable, so we opened your email app addressed to operations@pantechmarine.com with the message pre-filled. Just press send — or call us at +971 55 229 4871.'
         setSubmitStatus({ type: 'success', message: fallbackMessage })
         toast.success('Opening your email app…', { description: fallbackMessage, duration: 6000 })
       }
@@ -137,7 +137,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact Us - 24/7 Marine Survey Support"
-        description="Get in touch with Pantech Marine Services for marine survey services and consultations. Available 24/7 via phone +971 4 234 5678, email operations@pantechmarine.com, or fill out our contact form."
+        description="Get in touch with Pantech Marine Group for marine survey services. Available 24/7 via phone +971 55 229 4871 (Dubai) or +966 56 528 6769 (Dammam), email operations@pantechmarine.com, or fill out our contact form."
         canonical="https://pantech-marine.vercel.app/contact"
         structuredData={{
           '@graph': [
@@ -149,14 +149,11 @@ export default function Contact() {
       <div>
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-navy-deep via-primary to-steel-dark text-white py-24 md:py-32 overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" style={{backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px)'}}></div>
-          </div>
           <div className="relative z-10 max-w-7xl mx-auto px-4">
             <h1 className="font-heading font-bold text-4xl md:text-5xl mb-4">Contact Us</h1>
             <div className="w-24 h-1 bg-white/30 mb-6"></div>
             <p className="text-xl text-gray-100 max-w-3xl leading-relaxed">
-              Get in touch with our team for marine survey services and consultations
+              Get in touch with our team for marine survey services
             </p>
           </div>
         </section>
@@ -177,11 +174,24 @@ export default function Contact() {
                       <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                      <a href="tel:+97142345678" className="text-primary hover:underline">
-                        +971 4 234 5678
+                      <h3 className="font-semibold text-lg mb-1">Dubai — Pantech Marine Services DMCEST</h3>
+                      <a href="tel:+971552294871" className="text-primary hover:underline">
+                        +971 55 229 4871
                       </a>
-                      <p className="text-sm text-muted-foreground mt-1">Available 24/7</p>
+                      <p className="text-sm text-muted-foreground mt-1">Dubai Maritime City, UAE</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <Phone className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-1">Dammam — Red Water Marine Co.</h3>
+                      <a href="tel:+966565286769" className="text-primary hover:underline">
+                        +966 56 528 6769
+                      </a>
+                      <p className="text-sm text-muted-foreground mt-1">Dammam, Kingdom of Saudi Arabia</p>
                     </div>
                   </div>
 
@@ -203,9 +213,8 @@ export default function Contact() {
                       <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-1">Location</h3>
-                      <p className="text-muted-foreground">Dubai, United Arab Emirates</p>
-                      <p className="text-sm text-muted-foreground mt-1">Serving GCC & Mediterranean ports</p>
+                      <h3 className="font-semibold text-lg mb-1">Coverage</h3>
+                      <p className="text-muted-foreground">UAE (Dubai, Fujairah, Sharjah), Saudi Arabia (Dammam, Jubail, Jeddah, Yanbu), Oman (Sohar), Qatar (Ras Laffan), Kuwait (Shuwaikh)</p>
                     </div>
                   </div>
 
@@ -215,7 +224,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg mb-1">Availability</h3>
-                      <p className="text-muted-foreground">24/7 Emergency Service</p>
+                      <p className="text-muted-foreground">24/7 Attendance</p>
                       <p className="text-sm text-muted-foreground mt-1">Round-the-clock support</p>
                     </div>
                   </div>
@@ -309,12 +318,23 @@ export default function Contact() {
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     >
                       <option value="">Select a service</option>
-                      <option value="marine-claims">Marine Claims</option>
-                      <option value="heavy-lift">Heavy Lift Cargo</option>
-                      <option value="classification">Classification Surveys</option>
-                      <option value="draft-survey">Draft Surveys</option>
-                      <option value="pi-survey">P&I Surveys</option>
-                      <option value="risk-assessment">Risk Assessments</option>
+                      <option value="heavy-lift">Heavy Lift / Project Cargo</option>
+                      <option value="loading-discharge">Loading & Discharge Supervision</option>
+                      <option value="cargo-condition">Cargo Condition / Outturn Surveys</option>
+                      <option value="pre-shipment">Pre-Shipment Surveys</option>
+                      <option value="cargo-damage">Cargo Damage Surveys</option>
+                      <option value="tally">Tally & Quantity Supervision</option>
+                      <option value="on-off-hire">On-Hire / Off-Hire Surveys</option>
+                      <option value="bunker">Bunker Quantity Surveys</option>
+                      <option value="draft">Draft Surveys</option>
+                      <option value="vessel-condition">Vessel Condition Surveys</option>
+                      <option value="pre-purchase">Pre-Purchase Surveys</option>
+                      <option value="hatch-sealing">Hatch Sealing / Unsealing</option>
+                      <option value="port-captain">Port Captain / Supercargo</option>
+                      <option value="ro-ro">Ro-Ro / MAFI Supervision</option>
+                      <option value="stowage-lashing">Stowage & Lashing Inspections</option>
+                      <option value="pi-attendance">P&I Related Attendance</option>
+                      <option value="marine-claims">Marine Claims & Damage Surveys</option>
                       <option value="other">Other</option>
                     </select>
                   </div>

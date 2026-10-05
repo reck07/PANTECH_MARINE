@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Ship, Phone, Mail, MapPin, Clock, Anchor, Globe, Shield } from 'lucide-react'
+import { Ship, Phone, Mail, MapPin, Package, Anchor, CheckCircle } from 'lucide-react'
 import RedWaterSlider from '../components/RedWaterSlider'
 import SEO from '../components/SEO'
 import { organizationSchema, breadcrumbSchema } from '../components/SEO'
@@ -14,16 +14,45 @@ export default function RedWaterMarine() {
     { name: 'Red Water Marine', url: 'https://pantech-marine.vercel.app/red-water-marine' }
   ]
 
-  const services = [
-    { icon: Ship, title: 'Marine Claims', description: 'Expert assessment and documentation for marine insurance claims.' },
-    { icon: Anchor, title: 'Draft Surveys', description: 'Accurate draft surveys for cargo loading and discharge operations.' },
-    { icon: Shield, title: 'Classification Surveys', description: 'Vessel and cargo classification inspections and certifications.' },
-    { icon: Globe, title: 'Port Surveys', description: 'Comprehensive port condition surveys and cargo inspections.' },
-  ]
+  const ports = ['Dammam', 'Jubail', 'Ras Al Khair', 'Ras Tanura', 'Jeddah', 'Yanbu'];
 
-  const ports = [
-    'Jeddah', 'Dammam', 'Riyadh', 'Jubail', 'Yanbu', 'Dhahran',
-    'King Abdullah Port', 'Jizan', 'Neom', 'Red Sea Coast'
+  const serviceGroups = [
+    {
+      icon: Package,
+      title: 'Project & Cargo',
+      items: [
+        'Heavy Lift / Project Cargo Surveys',
+        'Loading & Discharge Supervision',
+        'Cargo Condition / Outturn Surveys',
+        'Pre-Shipment Surveys',
+        'Cargo Damage Surveys',
+        'Tally & Quantity Supervision'
+      ]
+    },
+    {
+      icon: Ship,
+      title: 'Vessel',
+      items: [
+        'On-Hire / Off-Hire Surveys',
+        'Bunker Quantity Surveys',
+        'Draft Surveys',
+        'Vessel Condition Surveys',
+        'Pre-Purchase Surveys',
+        'Hatch Sealing / Unsealing'
+      ]
+    },
+    {
+      icon: Anchor,
+      title: 'Operational',
+      items: [
+        'Port Captain / Supercargo Services',
+        'Ro-Ro / MAFI Supervision',
+        'Stowage & Securing Inspections',
+        'Lashing Inspections',
+        'P&I Related Attendance',
+        'Marine Claims & Damage Surveys'
+      ]
+    }
   ]
 
   return (
@@ -63,7 +92,7 @@ export default function RedWaterMarine() {
                 A subsidiary of Pantech Marine Services — providing trusted marine surveying and consulting across Saudi Arabia.
               </p>
               <a
-                href="tel:+966565286769"
+                href="tel:+971552294871"
                 className="bg-white text-[#0A1F3D] px-10 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl inline-flex items-center"
               >
                 Get in Touch
@@ -86,25 +115,8 @@ export default function RedWaterMarine() {
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-xl">
                 <h3 className="font-heading font-semibold text-xl mb-4 text-white">Our Mission</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  To provide reliable, accurate, and timely marine surveying services across all Saudi Arabian ports and Red Sea terminals. As part of the Pantech Marine Services family, we bring 40+ years of expertise to the Kingdom.
+                "To provide reliable, independent and timely marine surveying and project cargo services at seaports across Saudi Arabia. As part of the Pantech Group, with surveying roots in Dammam dating back to 1982, we deliver factual reporting to shipowners, operators and cargo interests."
                 </p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-xl">
-                <h3 className="font-heading font-semibold text-xl mb-4 text-white">Why Choose Us</h3>
-                <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-start gap-3">
-                    <Shield className="h-5 w-5 text-ocean-teal flex-shrink-0 mt-0.5" />
-                    <span>Fully certified and accredited marine surveyors</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Clock className="h-5 w-5 text-ocean-teal flex-shrink-0 mt-0.5" />
-                    <span>24/7 emergency response across all KSA ports</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Globe className="h-5 w-5 text-ocean-teal flex-shrink-0 mt-0.5" />
-                    <span>Extensive coverage of Red Sea and Arabian Gulf</span>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
@@ -117,25 +129,38 @@ export default function RedWaterMarine() {
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-white">
-                Our Services in KSA
+                Our Services
               </h2>
               <div className="w-24 h-1 bg-ocean-teal mx-auto mb-6"></div>
+              <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Red Water Marine Co. provides a comprehensive range of independent marine surveying services at seaports across Saudi Arabia.
+              </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {services.map((service, index) => {
-                const Icon = service.icon
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {serviceGroups.map((group, index) => {
+                const Icon = group.icon
                 return (
-                  <div key={index} className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-xl hover:bg-white/15 hover:border-white/30 transition-all duration-300 text-center group hover:-translate-y-1">
-                    <div className="flex justify-center mb-4">
-                      <div className="bg-ocean-teal/20 p-4 rounded-xl group-hover:scale-110 transition-transform">
-                        <Icon className="h-8 w-8 text-ocean-teal" />
-                      </div>
+                  <div key={index} className="group bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-xl hover:bg-white/15 hover:border-white/30 transition-all duration-300">
+                    <div className="bg-ocean-teal/20 p-4 rounded-xl mb-6 group-hover:scale-110 transition-transform">
+                      <Icon className="h-7 w-7 text-ocean-teal" />
                     </div>
-                    <h3 className="font-heading font-semibold text-lg mb-2 text-white">{service.title}</h3>
-                    <p className="text-gray-300 text-sm">{service.description}</p>
+                    <h3 className="font-heading font-semibold text-xl mb-4 text-white">{group.title}</h3>
+                    <ul className="space-y-2 text-gray-300 text-sm">
+                      {group.items.map((item, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle className="h-4 w-4 text-ocean-teal flex-shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )
               })}
+            </div>
+            <div className="mt-12 text-center max-w-3xl mx-auto">
+              <p className="text-gray-300 leading-relaxed">
+                Our reports are prepared on a factual, independent and observational basis, supported by operational records and photographic evidence.
+              </p>
             </div>
           </div>
         </section>
@@ -172,7 +197,7 @@ export default function RedWaterMarine() {
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-xl text-center">
                 <Phone className="h-8 w-8 text-ocean-teal mx-auto mb-4" />
                 <h3 className="font-heading font-semibold text-lg mb-2 text-white">Mobile</h3>
-                <a href="tel:+966565286769" className="text-gray-300 hover:text-white transition-colors">+966 56 528 6769</a>
+                <a href="tel:+971552294871" className="text-gray-300 hover:text-white transition-colors">+971 55 229 4871</a>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-xl text-center">
                 <Mail className="h-8 w-8 text-ocean-teal mx-auto mb-4" />
@@ -209,7 +234,7 @@ export default function RedWaterMarine() {
               Contact Red Water Marine for reliable, certified marine surveying services across Saudi Arabia.
             </p>
             <a
-              href="tel:+966565286769"
+              href="tel:+971552294871"
               className="group bg-white text-[#0A1F3D] px-10 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl inline-flex items-center"
             >
               Call Now

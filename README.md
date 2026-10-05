@@ -1,6 +1,6 @@
-# Pantech Marine Services - Professional Website
+# Pantech Marine Group - Professional Website
 
-A modern, professional website for Pantech Marine Services DMCEST - Trusted marine surveyors and consultants since 1982.
+A modern, professional website for Pantech Marine Group DMCEST - Trusted marine surveyors and consultants since 1982.
 
 # Project Summary
 
@@ -201,7 +201,7 @@ Place images in `public/` directory and reference them as `/image-name.jpg`
 
 ## 🤝 Contributing
 
-This is a private project for Pantech Marine Services.
+This is a private project for Pantech Marine Group.
 
 ## 📄 License
 
@@ -209,7 +209,7 @@ Private - All rights reserved
 
 ## 👥 Company Information
 
-**Pantech Marine Services DMCEST**
+**Pantech Marine Group DMCEST**
 - Established: 1982
 - Location: Dubai, UAE
 - Service Area: GCC & Mediterranean ports
@@ -227,7 +227,7 @@ Private - All rights reserved
 
 ---
 
-**Built with ❤️ for Pantech Marine Services**
+**Built with ❤️ for Pantech Marine Group**
 
 For questions or support, contact: info@pantechmarine.com
 

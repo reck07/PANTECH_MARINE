@@ -29,7 +29,7 @@ export default function MarineCoin({ size = 170, className = '' }: MarineCoinPro
     >
       <div className={`marine-coin${flipped ? ' flipped' : ''}`}>
         <div className="marine-coin-face">
-          <img src="/color-replaced.png" alt="Pantech Marine Services" className="filter brightness-0 invert" />
+          <img src="/color-replaced.png" alt="Pantech Marine Group" className="filter brightness-0 invert" />
         </div>
         <div className="marine-coin-face marine-coin-back">
           <img src="/red_water_logo.png" alt="Red Water Marine" />

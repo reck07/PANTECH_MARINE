@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
-import { Award, Users, MapPin, Calendar } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import SEO from '../components/SEO'
 import { organizationSchema, breadcrumbSchema } from '../components/SEO'
 
 export default function About() {
   useEffect(() => {
-    document.title = 'About Us | Pantech Marine Services DMCEST'
+    document.title = 'About Us | Pantech Marine Group'
   }, [])
 
   const breadcrumbs = [
@@ -16,8 +16,8 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About Us - 40+ Years of Marine Survey Excellence"
-        description="Leading marine surveyors and consultants with over four decades of experience. Established in 1982, serving UAE, KSA, GCC countries, and Mediterranean ports with certified expertise."
+        title="About Us - Marine Surveyors Since 1982"
+        description="Marine surveying roots in Dammam since 1982, with UAE expansion in 2010. Operating as Pantech Marine Services DMCEST (Dubai Maritime City) and Red Water Marine Co. (Dammam)."
         canonical="https://pantech-marine.vercel.app/about"
         structuredData={{
           '@graph': [
@@ -27,94 +27,97 @@ export default function About() {
         }}
       />
       <div>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy-deep via-primary to-steel-dark text-white py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px)'}}></div>
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4">
-          <h1 className="font-heading font-bold text-4xl md:text-5xl mb-4">About Us</h1>
-          <div className="w-24 h-1 bg-white/30 mb-6"></div>
-          <p className="text-xl text-gray-100 max-w-3xl leading-relaxed">
-            Leading marine surveyors and consultants with over four decades of experience
-          </p>
-        </div>
-      </section>
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-navy-deep via-primary to-steel-dark text-white py-24 md:py-32 overflow-hidden">
+          <div className="relative z-10 max-w-7xl mx-auto px-4">
+            <h1 className="font-heading font-bold text-4xl md:text-5xl mb-4">About Us</h1>
+            <div className="w-24 h-1 bg-white/30 mb-6"></div>
+            <p className="text-xl text-gray-100 max-w-3xl leading-relaxed">
+              Marine surveying roots in Dammam since 1982, with UAE expansion in 2010.
+            </p>
+          </div>
+        </section>
 
-      {/* Main Content */}
-      <section className="py-16">
+        {/* Main Content */}
+        <section className="py-16">
           <div className="max-w-4xl mx-auto px-4">
-            <div className="prose prose-lg max-w-none mb-12">
+            <div className="mb-12">
               <h2 className="font-heading font-bold text-3xl mb-6">Our Story</h2>
-              <p className="text-muted-foreground mb-4">
-                Pantech Marine Services DMCEST has been a trusted name in marine surveying and consulting since 1982. 
-                With over 40 years of experience, we have established ourselves as one of the leading marine survey 
-                companies in the GCC region and Mediterranean ports.
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                Our surveying roots trace back to Dammam, Saudi Arabia, where we began operations in 1982. 
+                In 2010, we expanded into the UAE, establishing our presence in Dubai Maritime City.
               </p>
-              <p className="text-muted-foreground mb-4">
-                Our team of certified marine surveyors and consultants brings unparalleled expertise to every project, 
-                ensuring accurate assessments, detailed documentation, and reliable consulting services for our clients.
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                Today, Pantech Marine Group operates through two entities: Pantech Marine Services DMCEST 
+                based in Dubai Maritime City, and Red Water Marine Co. based in Dammam, Kingdom of Saudi Arabia.
               </p>
-              <p className="text-muted-foreground">
-                We pride ourselves on our commitment to excellence, integrity, and 24/7 availability to serve our 
-                clients' urgent marine survey needs across the region.
+              <p className="text-muted-foreground leading-relaxed">
+                Our team provides independent marine surveying services across the region, with reports 
+                prepared on a factual, independent and observational basis, supported by operational 
+                records and photographic evidence.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Calendar className="h-8 w-8 text-primary" />
-                  <h3 className="font-heading font-semibold text-xl">Established 1982</h3>
-                </div>
-                <p className="text-muted-foreground">
-                  Over 40 years of continuous service in marine surveying and consulting.
-                </p>
+            <div className="bg-gray-50 p-6 rounded-xl mb-12">
+              <div className="flex items-center space-x-3 mb-4">
+                <MapPin className="h-8 w-8 text-primary" />
+                <h3 className="font-heading font-semibold text-xl">Heavy Lift & Project Cargo Focus</h3>
               </div>
+              <p className="text-muted-foreground leading-relaxed">
+                Specialized in heavy lift, project cargo, SPMT, and Ro-Ro/MAFI operations.
+              </p>
+            </div>
 
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="flex items-center space-x-3 mb-4">
-                  <MapPin className="h-8 w-8 text-primary" />
-                  <h3 className="font-heading font-semibold text-xl">Regional Coverage</h3>
+            {/* Our Entities */}
+            <div className="bg-primary/10 p-8 rounded-xl mb-12">
+              <h2 className="font-heading font-bold text-2xl mb-6">Our Entities</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white p-6 rounded-xl">
+                  <h3 className="font-semibold text-lg mb-2">Pantech Marine Services DMCEST</h3>
+                  <p className="text-muted-foreground text-sm">Dubai Maritime City, United Arab Emirates</p>
+                  <p className="text-muted-foreground text-sm mt-2">UAE operations covering Dubai, Fujairah, and Sharjah.</p>
                 </div>
-                <p className="text-muted-foreground">
-                  Serving UAE, KSA, GCC countries, and Mediterranean ports.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Users className="h-8 w-8 text-primary" />
-                  <h3 className="font-heading font-semibold text-xl">Expert Team</h3>
+                <div className="bg-white p-6 rounded-xl">
+                  <h3 className="font-semibold text-lg mb-2">Red Water Marine Co.</h3>
+                  <p className="text-muted-foreground text-sm">Dammam, Kingdom of Saudi Arabia</p>
+                  <p className="text-muted-foreground text-sm mt-2">KSA operations covering Dammam, Jubail, Jeddah, and Yanbu.</p>
                 </div>
-                <p className="text-muted-foreground">
-                  Certified and experienced marine surveyors and consultants.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Award className="h-8 w-8 text-primary" />
-                  <h3 className="font-heading font-semibold text-xl">Certified & Accredited</h3>
-                </div>
-                <p className="text-muted-foreground">
-                  Fully certified and accredited marine survey services.
-                </p>
               </div>
             </div>
 
-            <div className="bg-primary/10 p-8 rounded-lg">
-              <h2 className="font-heading font-bold text-2xl mb-4">Our Mission</h2>
-              <p className="text-muted-foreground text-lg">
-                To provide exceptional marine survey and consulting services with the highest standards of 
-                professionalism, accuracy, and reliability, while maintaining 24/7 availability to meet our 
-                clients' urgent needs across the GCC and Mediterranean regions.
-              </p>
+            {/* Coverage Section */}
+            <div className="bg-gray-50 p-8 rounded-xl">
+              <h2 className="font-heading font-bold text-2xl mb-6">Coverage</h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">UAE</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {['Dubai Maritime City', 'Fujairah', 'Sharjah'].map(port => (
+                      <span key={port} className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-muted-foreground">{port}</span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Saudi Arabia</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {['Dammam', 'Jubail', 'Jeddah', 'Yanbu'].map(port => (
+                      <span key={port} className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-muted-foreground">{port}</span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Regional Attendance</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {['Oman (Sohar)', 'Qatar (Ras Laffan)', 'Kuwait (Shuwaikh)'].map(port => (
+                      <span key={port} className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-muted-foreground">{port}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-      </section>
-    </div>
-  </>
-)
+        </section>
+      </div>
+    </>
+  )
 }
-

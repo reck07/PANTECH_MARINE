@@ -1,4 +1,4 @@
-# Pantech Marine Services - Robots.txt
+# Pantech Marine Group - Robots.txt
 # Allows all search engines to crawl the site
 
 User-agent: *

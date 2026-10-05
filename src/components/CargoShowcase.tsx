@@ -8,28 +8,28 @@ const cargoCards = [
     src: '/heavy-lift-Geelong.jpg',
     alt: 'Heavy lift cargo operation',
     category: 'Heavy Lift',
-    description: 'Specialized handling of oversized and heavy machinery.',
+    description: 'Heavy lift and project cargo supervision.',
   },
   {
     id: 2,
     src: '/img2.jpg',
-    alt: 'Liquid bulk tanker',
-    category: 'Liquid Bulk',
-    description: 'Safe transport of liquid cargo including oil and chemicals.',
+    alt: 'Project cargo supervision',
+    category: 'Project Cargo',
+    description: 'Project cargo loading and discharge supervision.',
   },
   {
     id: 3,
     src: '/img3.jpg',
-    alt: 'Containerized cargo handling',
-    category: 'Containerized Cargo',
-    description: 'Efficient container handling and logistics management.',
+    alt: 'Ro-Ro operations',
+    category: 'Ro-Ro / MAFI',
+    description: 'Ro-Ro and MAFI supervision and stowage inspections.',
   },
   {
     id: 4,
     src: '/img4.jpg',
-    alt: 'Dry bulk carrier in port',
-    category: 'Dry Bulk',
-    description: 'Expert handling of dry bulk commodities.',
+    alt: 'Stowage and lashing inspection',
+    category: 'Stowage & Lashing',
+    description: 'Stowage, securing and lashing inspections.',
   },
 ]
 
@@ -38,10 +38,10 @@ const CargoShowcase = memo(function CargoShowcase() {
     <section className="py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-foreground">Our Expertise in Cargo</h2>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-foreground">Our Expertise in Cargo Surveys</h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We handle a diverse range of cargo with precision and care, ensuring safe and efficient transport across the globe.
+          We conduct a comprehensive range of cargo inspections and surveys, delivering accurate, impartial and detailed reports that support the safety, security and integrity of cargo throughout transportation and handling.
           </p>
         </div>
 

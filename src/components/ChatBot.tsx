@@ -16,7 +16,7 @@ export default function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hello! I'm here to help with questions about Pantech Marine Services. How can I assist you today?",
+      text: "Hello! I'm here to help with questions about Pantech Marine Group. How can I assist you today?",
       sender: 'bot',
       timestamp: new Date()
     }
@@ -86,7 +86,7 @@ export default function ChatBot() {
       
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: data.reply || data.error || "I'm having trouble processing your request right now. Please try again or contact us directly at +971 4 234 5678.",
+        text: data.reply || data.error || "I'm having trouble processing your request right now. Please try again or contact us directly at +971 55 229 4871 (Dubai) or +966 56 528 6769 (Dammam).",
         sender: 'bot',
         timestamp: new Date()
       }
@@ -97,14 +97,15 @@ export default function ChatBot() {
       
       // Fallback response when API is unavailable
       const fallbackResponses: { [key: string]: string } = {
-        'services': 'We offer comprehensive marine survey services including Marine Claims, Heavy Lift Cargo, Classification Surveys, Draft Surveys, P&I Surveys, and Risk Assessments. All services are available 24/7 across GCC & Mediterranean ports.',
-        'contact': 'You can reach us at:\n📞 Phone: +971 4 234 5678 (24/7)\n📧 Email: operations@pantechmarine.com\n📍 Dubai, UAE',
-        '24/7': 'Yes! We provide 24/7 emergency service for all marine survey needs. Our team is available round-the-clock.',
-        'certification': 'We are fully certified and accredited marine surveyors with international recognition, serving since 1982.'
+        'services': 'Our services include:\n\nProject & Cargo:\n- Heavy Lift / Project Cargo Surveys\n- Loading & Discharge Supervision\n- Cargo Condition / Outturn Surveys\n- Pre-Shipment Surveys\n- Cargo Damage Surveys\n- Tally & Quantity Supervision\n\nVessel:\n- On-Hire / Off-Hire Surveys\n- Bunker Quantity Surveys\n- Draft Surveys\n- Vessel Condition Surveys\n- Pre-Purchase Surveys\n- Hatch Sealing / Unsealing\n\nOperational:\n- Port Captain / Supercargo Services\n- Ro-Ro / MAFI Supervision\n- Stowage & Securing Inspections\n- Lashing Inspections\n- P&I Related Attendance\n- Marine Claims & Damage Surveys\n\nAvailable 24/7 across UAE, KSA, Oman, Qatar, and Kuwait.',
+        'contact': 'You can reach us at:\n📞 Dubai: +971 55 229 4871 (Pantech Marine Services DMCEST)\n📞 Dammam: +966 56 528 6769 (Red Water Marine Co.)\n📧 Email: operations@pantechmarine.com',
+        '24/7': 'Yes! We provide 24/7 attendance for urgent marine survey needs. Call Dubai: +971 55 229 4871 or Dammam: +966 56 528 6769.',
+        'certification': 'Our surveyors operate to recognized professional marine survey standards. Reports are prepared on a factual, independent and observational basis.',
+        'coverage': 'We serve:\nUAE: Dubai Maritime City, Fujairah, Sharjah\nSaudi Arabia: Dammam, Jubail, Jeddah, Yanbu\nOman: Sohar\nQatar: Ras Laffan\nKuwait: Shuwaikh'
       }
       
       const lowerInput = userMessageText.toLowerCase()
-      let fallbackResponse = "I'm having trouble connecting to our server right now. Please contact us directly:\n📞 +971 4 234 5678\n📧 operations@pantechmarine.com"
+      let fallbackResponse = "I'm having trouble connecting to our server right now. Please contact us directly:\n📞 Dubai: +971 55 229 4871\n📞 Dammam: +966 56 528 6769\n📧 operations@pantechmarine.com"
       
       for (const [key, response] of Object.entries(fallbackResponses)) {
         if (lowerInput.includes(key)) {
@@ -137,14 +138,14 @@ export default function ChatBot() {
     "What services do you offer?",
     "How can I contact you?",
     "Do you provide 24/7 service?",
-    "What are your certifications?"
+    "What is your coverage area?"
   ]
 
   return (
     <>
       {/* WhatsApp Button - Fixed position, moves up when chat is open on mobile */}
       <a
-        href="https://wa.me/97142345678"
+        href="https://wa.me/971552294871"
         target="_blank"
         rel="noopener noreferrer"
         className={`fixed z-40 flex items-center justify-center bg-green-500 text-white p-3 md:p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 ${
@@ -176,7 +177,7 @@ export default function ChatBot() {
                 <img src="/color-replaced.png" alt="" className="h-5 w-5 object-contain filter brightness-0 invert" aria-hidden="true" />
               </div>
               <div>
-                <h3 id="chat-title" className="font-semibold">Pantech Marine Services</h3>
+                <h3 id="chat-title" className="font-semibold">Pantech Marine Group</h3>
                 <p id="chat-description" className="text-xs text-white/80">Online • Typically replies instantly</p>
               </div>
             </div>

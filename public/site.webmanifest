@@ -1,5 +1,5 @@
 {
-  "name": "Pantech Marine Services",
+  "name": "Pantech Marine Group",
   "short_name": "Pantech Marine",
   "description": "Trusted marine surveyors and consultants since 1982. Marine claims, heavy lift cargo, classification surveys, draft surveys, P&I surveys, risk assessments across UAE, KSA, GCC & Mediterranean ports.",
   "start_url": "/",
@@ -28,7 +28,7 @@
     {
       "name": "Contact Us",
       "short_name": "Contact",
-      "description": "Contact Pantech Marine Services",
+      "description": "Contact Pantech Marine Group",
       "url": "/contact",
       "icons": [{ "src": "/icons/contact.png", "sizes": "192x192" }]
     },

@@ -1,18 +1,14 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Ship, FileCheck, Shield, Zap, CheckCircle } from 'lucide-react'
-import Statistics from '../components/Statistics'
-import Testimonials from '../components/Testimonials'
-import Certifications from '../components/Certifications'
+import { ArrowRight, Ship, Package, Anchor, MapPin, Users, CheckCircle, Phone, Mail } from 'lucide-react'
 import ClientLogos from '../components/ClientLogos'
-import AdditionalServices from '../components/AdditionalServices'
 import CargoShowcase from '../components/CargoShowcase'
 import SEO from '../components/SEO'
 import { organizationSchema, localBusinessSchema, breadcrumbSchema } from '../components/SEO'
 
 export default function Home() {
   useEffect(() => {
-    document.title = 'Pantech Marine Services DMCEST | Marine Cargo Surveyors & Consultants'
+    document.title = 'Pantech Marine Group UAE & SAUDI ARABIA & OMAN | Marine Cargo Surveyors & Consultants'
   }, [])
 
   const breadcrumbs = [
@@ -22,8 +18,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Trusted Marine Surveyors & Consultants Since 1982"
-        description="Trusted marine surveyors and consultants since 1982. Specialists in marine claims, heavy lift cargo, classification surveys & risk assessments across UAE, KSA, GCC & Mediterranean ports. 24/7 availability."
+        title="Pantech marine"
+        description="Trusted marine surveyors since 1982. Specialists in heavy lift cargo, project cargo, vessel surveys, and marine claims across UAE, KSA, Oman, Qatar, and Kuwait ports. 24/7 availability."
         canonical="https://pantech-marine.vercel.app/"
         structuredData={{
           '@graph': [
@@ -41,19 +37,16 @@ export default function Home() {
         </div>
         <div className="relative z-10 px-4">
           <div className="max-w-4xl mx-auto text-center md:text-left">
-            <div className="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <span className="text-sm font-semibold">Trusted Since 1982. 40+ Years of Excellence</span>
-            </div>
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-balance leading-tight">
-              Trusted Marine Surveyors & Consultants
+              Trusted Marine Surveyors & Consultants <small className="block mt-2 text-xl font-medium">Serving the Gulf since 1982</small>
             </h1>
             <p className="text-lg md:text-xl mb-10 text-gray-100 max-w-2xl leading-relaxed mx-auto md:mx-0">
-              Serving GCC & Mediterranean ports with 24/7 availability for all marine survey needs. Certified, accredited, and trusted by industry leaders.
+            Serving seaports in the Kingdom of Saudi Arabia, the UAE and Oman for all marine survey and inspection needs.
             </p>
             <div className="mt-10 flex items-center gap-6 justify-center md:justify-start">
               <img
                 src="/color-replaced.png"
-                alt="Pantech Marine Services Logo"
+                alt="Pantech Marine Group Logo"
                 className="h-[4.5rem] md:h-[5.5rem] w-auto object-contain filter brightness-0 invert"
               />
               <img
@@ -68,8 +61,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Statistics />
-
       <CargoShowcase />
 
       {/* Services Overview */}
@@ -78,95 +69,102 @@ export default function Home() {
           <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-foreground">Our Services</h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Comprehensive marine survey and consulting services across the region
+            Beyond project cargo operations, our team provides a comprehensive range of independent marine surveying services.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
           <div className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl border border-gray-100 hover:border-primary/20 transition-all duration-300">
             <div className="bg-gradient-to-br from-primary/10 to-primary/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+               <Package className="h-7 w-7 text-primary" />
+            </div>
+            <h3 className="font-heading font-semibold text-xl mb-3 text-foreground">Project & Cargo</h3>
+            <ul className="space-y-2 text-muted-foreground text-sm">
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Heavy Lift / Project Cargo Surveys</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Loading & Discharge Supervision</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Cargo Condition / Outturn Surveys</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Pre-Shipment Surveys</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Cargo Damage Surveys</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Tally & Quantity Supervision</span></li>
+            </ul>
+          </div>
+          <div className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl border border-gray-100 hover:border-primary/20 transition-all duration-300">
+            <div className="bg-gradient-to-br from-primary/10 to-primary/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                <Ship className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="font-heading font-semibold text-xl mb-3 text-foreground">Marine Claims</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Expert assessment and documentation for marine insurance claims and disputes.
-            </p>
+            <h3 className="font-heading font-semibold text-xl mb-3 text-foreground">Vessel</h3>
+            <ul className="space-y-2 text-muted-foreground text-sm">
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>On-Hire / Off-Hire Surveys</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Bunker Quantity Surveys</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Draft Surveys</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Vessel Condition Surveys</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Pre-Purchase Surveys</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Hatch Sealing / Unsealing</span></li>
+            </ul>
           </div>
           <div className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl border border-gray-100 hover:border-primary/20 transition-all duration-300">
             <div className="bg-gradient-to-br from-primary/10 to-primary/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-               <FileCheck className="h-7 w-7 text-primary" />
+               <Anchor className="h-7 w-7 text-primary" />
             </div>
-            <h3 className="font-heading font-semibold text-xl mb-3 text-foreground">Heavy Lift Cargo</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Specialized surveys for oversized and heavy lift cargo shipments.
-            </p>
+            <h3 className="font-heading font-semibold text-xl mb-3 text-foreground">Operational</h3>
+            <ul className="space-y-2 text-muted-foreground text-sm">
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Port Captain / Supercargo Services</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Ro-Ro / MAFI Supervision</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Stowage & Securing Inspections</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Lashing Inspections</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>P&I Related Attendance</span></li>
+              <li className="flex items-start gap-2"><CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" /><span>Marine Claims & Damage Surveys</span></li>
+            </ul>
           </div>
-          <div className="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl border border-gray-100 hover:border-primary/20 transition-all duration-300">
-            <div className="bg-gradient-to-br from-primary/10 to-primary/5 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-               <Shield className="h-7 w-7 text-primary" />
-            </div>
-            <h3 className="font-heading font-semibold text-xl mb-3 text-foreground">Classification Surveys</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Comprehensive vessel and cargo classification surveys and inspections.
-            </p>
-          </div>
+        </div>
+        <div className="mt-12 text-center max-w-6xl mx-auto px-4">
+          <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Our reports are prepared on a factual, independent and observational basis, supported by operational records and photographic evidence.
+          </p>
         </div>
       </section>
 
-      {/* Additional Services Section */}
-      <AdditionalServices />
-
-      {/* Why Choose Us */}
+      {/* Who We Are and Where We Work */}
       <section className="py-20 bg-white cv-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto px-4">
           <div>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-foreground">Why Choose Pantech Marine Services?</h2>
+            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-foreground">Who We Are and Where We Work</h2>
             <div className="w-24 h-1 bg-primary mb-8"></div>
             <div className="space-y-6">
-              <div className="flex items-start space-x-4 group">
-                <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
-                  <CheckCircle className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
+              <div className="group bg-white p-6 rounded-xl shadow-sm hover:shadow-xl border border-gray-100 hover:border-primary/20 transition-all duration-300 flex items-start gap-4">
+                <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary transition-colors flex-shrink-0">
+                  <MapPin className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-2 text-foreground">40+ Years of Experience</h3>
-                  <p className="text-muted-foreground leading-relaxed">Established in 1982 with extensive industry expertise and proven track record</p>
+                  <p className="font-semibold text-foreground mb-1">Pantech Marine Services DMCEST</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Pantech Marine Services DMCEST is based in Dubai, United Arab Emirates, and attends seaports across the UAE and Oman.
+                  </p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4 group">
-                <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
-                  <Zap className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2 text-foreground">24/7 Availability</h3>
-                  <p className="text-muted-foreground leading-relaxed">Round-the-clock service for urgent marine survey needs across all time zones</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4 group">
-                <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
-                  <Ship className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2 text-foreground">Regional Coverage</h3>
-                  <p className="text-muted-foreground leading-relaxed">Serving UAE, KSA, GCC & Mediterranean ports with local expertise</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4 group">
-                <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
-                  <Shield className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2 text-foreground">Certified & Accredited</h3>
-                  <p className="text-muted-foreground leading-relaxed">Fully certified marine surveyors and consultants with international recognition</p>
-                </div>
-              </div>
+
               <div className="group bg-white p-6 rounded-xl shadow-sm hover:shadow-xl border border-gray-100 hover:border-primary/20 transition-all duration-300 flex items-start gap-4">
                 <img src="/red_water_logo.png" alt="Red Water Marine Co." className="h-12 w-auto object-contain flex-shrink-0" loading="lazy" decoding="async" />
                 <div>
                   <p className="font-semibold text-foreground mb-1">Red Water Marine Co.</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">Operating from Dammam, Jubail, Jeddah and Yanbu, Red Water Marine Co. extends our marine surveying and project cargo services across Saudi Arabia.</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Red Water Marine Co. is based in Dammam, Saudi Arabia, and serves seaports throughout the Kingdom.
+                  </p>
                   <Link to="/red-water-marine" className="group/link inline-flex items-center text-primary font-semibold text-sm mt-3 hover:underline">
                     Learn More
                     <ArrowRight className="ml-1 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
                   </Link>
+                </div>
+              </div>
+
+              <div className="group bg-white p-6 rounded-xl shadow-sm hover:shadow-xl border border-gray-100 hover:border-primary/20 transition-all duration-300 flex items-start gap-4">
+                <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary transition-colors flex-shrink-0">
+                  <Users className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground mb-1">Our Surveyors</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Our surveyors come from marine engineering, deck, surveying and port-operational backgrounds, so we understand each operation from both the vessel and the cargo side.
+                  </p>
                 </div>
               </div>
             </div>
@@ -189,14 +187,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Certifications Section */}
-      <Certifications />
-
       {/* Client Logos Section */}
       <ClientLogos />
-
-      {/* Testimonials Section */}
-      <Testimonials />
 
       {/* CTA Section */}
       <section className="relative bg-gradient-to-br from-navy-deep via-primary to-steel-dark text-white py-16 md:py-20 pb-24 md:pb-20 overflow-hidden">
@@ -209,6 +201,24 @@ export default function Home() {
           <p className="text-xl mb-10 text-gray-100 max-w-2xl mx-auto leading-relaxed">
             Let's discuss how we can assist with your marine survey requirements. Get in touch today for expert consultation.
           </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link
+              to="/contact"
+              className="group bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-white/90 transition-all shadow-md hover:shadow-lg inline-flex items-center"
+            >
+              Contact Us
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <a
+              href="https://wa.me/971552294871"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center px-8 py-4 rounded-lg font-semibold bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-all backdrop-blur-sm"
+            >
+              <Phone className="h-5 w-5 mr-2" />
+              WhatsApp Now
+            </a>
+          </div>
         </div>
       </section>
     </div>
