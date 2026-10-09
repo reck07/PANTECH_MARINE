@@ -39,6 +39,21 @@ export default {
   				'system-ui',
   				'sans-serif'
   			],
+  			brand: [
+  				'Lilita One',
+  				'Anton',
+  				'Impact',
+  				'sans-serif'
+  			],
+  			script: [
+  				'Kalam',
+  				'cursive'
+  			],
+  			serifbrand: [
+  				'Libre Baskerville',
+  				'Georgia',
+  				'serif'
+  			],
   			sans: [
   				'Inter',
   				'ui-sans-serif',
@@ -113,7 +128,7 @@ export default {
   					primary: 'hsl(var(--sidebar-primary))',
   					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
   					accent: 'hsl(var(--sidebar-accent))',
-  					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  					'accent-foreground': 'hsl(var(--sidebar-accept-foreground))',
   					border: 'hsl(var(--sidebar-border))'
   				},
   			navy: {

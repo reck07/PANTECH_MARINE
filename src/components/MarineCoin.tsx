@@ -19,7 +19,7 @@ export default function MarineCoin({ size = 170, className = '' }: MarineCoinPro
 
   return (
     <div
-      className={`marine-coin-wrapper ${className}`}
+      className={`marine-coin-wrapper ${className} flex items-center justify-center`}
       style={{ width: size, height: size }}
       onClick={toggle}
       role="button"

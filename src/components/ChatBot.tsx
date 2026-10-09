@@ -86,7 +86,7 @@ export default function ChatBot() {
       
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: data.reply || data.error || "I'm having trouble processing your request right now. Please try again or contact us directly at +971 55 229 4871 (Dubai) or +966 56 528 6769 (Dammam).",
+        text: data.reply || data.error || "I'm having trouble processing your request right now. Please try again or contact us directly at +971 55 229 4871 (Dubai) or +966 56 748 4034 (Dammam).",
         sender: 'bot',
         timestamp: new Date()
       }
@@ -98,14 +98,14 @@ export default function ChatBot() {
       // Fallback response when API is unavailable
       const fallbackResponses: { [key: string]: string } = {
         'services': 'Our services include:\n\nProject & Cargo:\n- Heavy Lift / Project Cargo Surveys\n- Loading & Discharge Supervision\n- Cargo Condition / Outturn Surveys\n- Pre-Shipment Surveys\n- Cargo Damage Surveys\n- Tally & Quantity Supervision\n\nVessel:\n- On-Hire / Off-Hire Surveys\n- Bunker Quantity Surveys\n- Draft Surveys\n- Vessel Condition Surveys\n- Pre-Purchase Surveys\n- Hatch Sealing / Unsealing\n\nOperational:\n- Port Captain / Supercargo Services\n- Ro-Ro / MAFI Supervision\n- Stowage & Securing Inspections\n- Lashing Inspections\n- P&I Related Attendance\n- Marine Claims & Damage Surveys\n\nAvailable 24/7 across UAE, KSA, Oman, Qatar, and Kuwait.',
-        'contact': 'You can reach us at:\n📞 Dubai: +971 55 229 4871 (Pantech Marine Services DMCEST)\n📞 Dammam: +966 56 528 6769 (Red Water Marine Co.)\n📧 Email: operations@pantechmarine.com',
-        '24/7': 'Yes! We provide 24/7 attendance for urgent marine survey needs. Call Dubai: +971 55 229 4871 or Dammam: +966 56 528 6769.',
+        'contact': 'You can reach us at:\n📞 Dubai: +971 55 229 4871 (Pantech Marine Services DMCEST)\n📞 Dammam: +966 56 748 4034 (Red Water Marine Co.)\n📧 Email: operations@pantechmarine.com',
+        '24/7': 'Yes! We provide 24/7 attendance for urgent marine survey needs. Call Dubai: +971 55 229 4871 or Dammam: +966 56 748 4034.',
         'certification': 'Our surveyors operate to recognized professional marine survey standards. Reports are prepared on a factual, independent and observational basis.',
         'coverage': 'We serve:\nUAE: Dubai Maritime City, Fujairah, Sharjah\nSaudi Arabia: Dammam, Jubail, Jeddah, Yanbu\nOman: Sohar\nQatar: Ras Laffan\nKuwait: Shuwaikh'
       }
       
       const lowerInput = userMessageText.toLowerCase()
-      let fallbackResponse = "I'm having trouble connecting to our server right now. Please contact us directly:\n📞 Dubai: +971 55 229 4871\n📞 Dammam: +966 56 528 6769\n📧 operations@pantechmarine.com"
+      let fallbackResponse = "I'm having trouble connecting to our server right now. Please contact us directly:\n📞 Dubai: +971 55 229 4871\n📞 Dammam: +966 56 748 4034\n📧 operations@pantechmarine.com"
       
       for (const [key, response] of Object.entries(fallbackResponses)) {
         if (lowerInput.includes(key)) {

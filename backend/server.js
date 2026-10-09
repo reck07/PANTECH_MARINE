@@ -25,7 +25,7 @@ Company Information:
 - Name: Pantech Marine Group
 - Entities: Pantech Marine Services DMCEST (Dubai Maritime City) and Red Water Marine Co. (Dammam)
 - Surveying roots in Dammam since 1982, UAE expansion in 2010
-- Contact: Dubai +971 55 229 4871, Dammam +966 56 528 6769, operations@pantechmarine.com
+- Contact: Dubai +971 55 229 4871, Dammam +966 56 748 4034, operations@pantechmarine.com
 
 Coverage:
 - UAE: Dubai Maritime City, Fujairah, Sharjah
@@ -66,7 +66,7 @@ Rules:
 - Never claim ISO 9001, IMO recognition, classification society approval, or GCC licensing
 - Never mention Mediterranean ports
 - Never say "consultants" or "consulting"
-- If asked about anything not listed above, direct to +971 55 229 4871 (Dubai) or +966 56 528 6769 (Dammam) or operations@pantechmarine.com
+- If asked about anything not listed above, direct to +971 55 229 4871 (Dubai) or +966 56 748 4034 (Dammam) or operations@pantechmarine.com
 - Always be professional, helpful, and concise.`;
 
 app.get('/', (req, res) => {
@@ -121,7 +121,7 @@ app.post('/api/chat', async (req, res) => {
     console.error('Chat error:', error);
     res.status(500).json({
       error: 'Internal server error',
-      reply: 'Please contact us directly at +971 55 229 4871 (Dubai) or +966 56 528 6769 (Dammam).'
+      reply: 'Please contact us directly at +971 55 229 4871 (Dubai) or +966 56 748 4034 (Dammam).'
     });
   }
 });
@@ -138,7 +138,7 @@ function getFallbackReply(message) {
   }
 
   if (lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('email') || lowerMessage.includes('reach')) {
-    return 'You can reach us at:\nDubai: +971 55 229 4871 (Pantech Marine Services DMCEST)\nDammam: +966 56 528 6769 (Red Water Marine Co.)\nEmail: operations@pantechmarine.com';
+    return 'You can reach us at:\nDubai: +971 55 229 4871 (Pantech Marine Services DMCEST)\nDammam: +966 56 748 4034 (Red Water Marine Co.)\nEmail: operations@pantechmarine.com';
   }
 
   if (lowerMessage.includes('about') || lowerMessage.includes('company') || lowerMessage.includes('history')) {
@@ -146,14 +146,14 @@ function getFallbackReply(message) {
   }
 
   if (lowerMessage.includes('emergency') || lowerMessage.includes('24/7') || lowerMessage.includes('urgent')) {
-    return 'Yes, we offer 24/7 attendance for urgent marine survey needs. Call Dubai: +971 55 229 4871 or Dammam: +966 56 528 6769.';
+    return 'Yes, we offer 24/7 attendance for urgent marine survey needs. Call Dubai: +971 55 229 4871 or Dammam: +966 56 748 4034.';
   }
 
   if (lowerMessage.includes('coverage') || lowerMessage.includes('port') || lowerMessage.includes('where')) {
     return 'We serve:\nUAE: Dubai Maritime City, Fujairah, Sharjah\nSaudi Arabia: Dammam, Jubail, Jeddah, Yanbu\nOman: Sohar\nQatar: Ras Laffan\nKuwait: Shuwaikh';
   }
 
-  return 'Thank you for your message. For detailed inquiries, please contact us at +971 55 229 4871 (Dubai) or +966 56 528 6769 (Dammam) or operations@pantechmarine.com. We are available 24/7.';
+  return 'Thank you for your message. For detailed inquiries, please contact us at +971 55 229 4871 (Dubai) or +966 56 748 4034 (Dammam) or operations@pantechmarine.com. We are available 24/7.';
 }
 
 app.post('/api/contact', async (req, res) => {

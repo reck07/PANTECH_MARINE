@@ -137,7 +137,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact Us - 24/7 Marine Survey Support"
-        description="Get in touch with Pantech Marine Group for marine survey services. Available 24/7 via phone +971 55 229 4871 (Dubai) or +966 56 528 6769 (Dammam), email operations@pantechmarine.com, or fill out our contact form."
+        description="Get in touch with Pantech Marine Group for marine survey services. Available 24/7 via phone +971 55 229 4871 (Dubai) or +966 56 748 4034 (Dammam), email operations@pantechmarine.com, or fill out our contact form."
         canonical="https://pantech-marine.vercel.app/contact"
         structuredData={{
           '@graph': [
@@ -188,8 +188,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg mb-1">Dammam — Red Water Marine Co.</h3>
-                      <a href="tel:+966565286769" className="text-primary hover:underline">
-                        +966 56 528 6769
+                      <a href="tel:+966567484034" className="text-primary hover:underline">
+                        +966 56 748 4034
                       </a>
                       <p className="text-sm text-muted-foreground mt-1">Dammam, Kingdom of Saudi Arabia</p>
                     </div>
