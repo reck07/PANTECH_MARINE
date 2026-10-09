@@ -21,11 +21,11 @@ export default function Header() {
             {/* Brand Lockup - left-aligned, min-w-0 to prevent overflow, vertically centered */}
             <div className="min-w-0 text-left flex flex-col justify-center">
               {/* Line 1: PANTECH MARINE GROUP - largest */}
-              <div className="font-brand uppercase tracking-normal text-[18px] sm:text-[20px] lg:text-[24px] leading-none text-foreground whitespace-nowrap select-none">
+              <div className="font-brand uppercase tracking-normal text-[18px] sm:text-[20px] lg:text-[24px] leading-none text-gray-900 whitespace-nowrap select-none">
                 PANTECH MARINE GROUP
               </div>
               {/* Line 2: Coverage - smaller, serif style */}
-              <div className="font-serifbrand uppercase text-[9px] sm:text-[10px] tracking-[0.1em] mt-0.5 text-foreground whitespace-nowrap">
+              <div className="font-serifbrand uppercase text-[9px] sm:text-[10px] tracking-[0.1em] mt-0.5 text-gray-700 whitespace-nowrap">
                 UAE • SAUDI ARABIA • GCC
               </div>
             </div>
@@ -33,16 +33,8 @@ export default function Header() {
 
           {/* Right side: Navigation + Contact (desktop) or Call + Menu button (mobile) */}
           <div className="flex items-center gap-2 md:gap-4 shrink-0">
-            {/* Mobile: Call button + Menu button */}
-            <div className="md:hidden flex items-center gap-2">
-              {/* Mobile Call Button - always visible */}
-              <a
-                href="tel:+971552294871"
-                className="h-11 w-11 flex items-center justify-center bg-primary text-white rounded-lg shadow-lg hover:bg-primary/90 transition-colors"
-                aria-label="Call Dubai office"
-              >
-                <Phone className="h-6 w-6" />
-              </a>
+            {/* Mobile: Menu button only */}
+            <div className="md:hidden flex items-center">
               {/* Mobile Menu Button - fixed 44x44 */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
