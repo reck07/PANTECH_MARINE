@@ -75,7 +75,7 @@ export default function About() {
                 <div className="bg-white p-6 rounded-xl">
                   <h3 className="font-semibold text-lg mb-2">Pantech Marine Services DMCEST</h3>
                   <p className="text-muted-foreground text-sm">Dubai Maritime City, United Arab Emirates</p>
-                  <p className="text-muted-foreground text-sm mt-2">UAE operations covering Dubai, Fujairah, and Sharjah.</p>
+                  <p className="text-muted-foreground text-sm mt-2">UAE operations, Fujairah, and Sharjah.</p>
                 </div>
                 <div className="bg-white p-6 rounded-xl">
                   <h3 className="font-semibold text-lg mb-2">Red Water Marine Co.</h3>
@@ -92,7 +92,7 @@ export default function About() {
                 <div>
                   <h3 className="font-semibold text-lg mb-2">UAE</h3>
                   <div className="flex flex-wrap gap-2">
-                    {['Dubai Maritime City', 'Fujairah', 'Sharjah'].map(port => (
+                    {['Fujairah', 'Sharjah'].map(port => (
                       <span key={port} className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-muted-foreground">{port}</span>
                     ))}
                   </div>

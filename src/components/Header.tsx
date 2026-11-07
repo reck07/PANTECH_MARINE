@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Menu, Phone, Mail, X } from 'lucide-react'
 import { useState } from 'react'
-import MarineCoin from './MarineCoin'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -13,11 +12,8 @@ export default function Header() {
       {/* Transparent blur effect on all screen sizes */}
       <div className="py-3 bg-white/60 backdrop-blur-md px-4 border-b border-gray-100/50">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
-          {/* Left side: MarineCoin + Brand Lockup */}
+          {/* Left side: Brand Lockup */}
           <Link to="/" className="flex items-center gap-4 min-w-0 flex-1" aria-label="Pantech Marine Group - Home">
-            {/* MarineCoin - 40px mobile, 64px from md */}
-            <MarineCoin size={60} className="md:size-22 flex-shrink-0" aria-hidden="true" />
-
             {/* Brand Lockup - left-aligned, min-w-0 to prevent overflow, vertically centered */}
             <div className="min-w-0 text-left flex flex-col justify-center">
               {/* Line 1: PANTECH MARINE GROUP - largest */}
