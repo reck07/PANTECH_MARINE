@@ -17,7 +17,7 @@ export default function Header() {
             {/* Brand Lockup - left-aligned, min-w-0 to prevent overflow, vertically centered */}
             <div className="min-w-0 text-left flex flex-col justify-center">
               {/* Line 1: PANTECH MARINE GROUP - largest */}
-              <div className="font-brand uppercase tracking-normal text-[18px] sm:text-[20px] lg:text-[24px] leading-none text-gray-900 whitespace-nowrap select-none">
+              <div className="font-brand uppercase tracking-normal text-[18px] sm:text-[20px] lg:text-[22px] xl:text-[24px] leading-none text-gray-900 whitespace-nowrap select-none">
                 PANTECH MARINE GROUP
               </div>
               {/* Line 2: Coverage - smaller, serif style */}
@@ -43,41 +43,41 @@ export default function Header() {
             </div>
 
             {/* Desktop Navigation + Contact */}
-            <div className="hidden md:flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-2 lg:gap-4">
               {/* Desktop Navigation */}
               <nav className="flex items-center space-x-1" aria-label="Main navigation">
-                <Link to="/" className="px-3 py-2 text-sm text-foreground hover:text-primary font-medium transition-colors rounded-lg hover:bg-primary/5">
+                <Link to="/" className="px-2 lg:px-3 py-2 text-sm text-foreground hover:text-primary font-medium transition-colors rounded-lg hover:bg-primary/5">
                   Home
                 </Link>
-                <Link to="/about" className="px-3 py-2 text-sm text-foreground hover:text-primary font-medium transition-colors rounded-lg hover:bg-primary/5">
+                <Link to="/about" className="px-2 lg:px-3 py-2 text-sm text-foreground hover:text-primary font-medium transition-colors rounded-lg hover:bg-primary/5">
                   About
                 </Link>
-                <Link to="/services" className="px-3 py-2 text-sm text-foreground hover:text-primary font-medium transition-colors rounded-lg hover:bg-primary/5">
+                <Link to="/services" className="px-2 lg:px-3 py-2 text-sm text-foreground hover:text-primary font-medium transition-colors rounded-lg hover:bg-primary/5">
                   Services
                 </Link>
-                <Link to="/contact" className="px-3 py-2 text-sm text-foreground hover:text-primary font-medium transition-colors rounded-lg hover:bg-primary/5">
+                <Link to="/contact" className="px-2 lg:px-3 py-2 text-sm text-foreground hover:text-primary font-medium transition-colors rounded-lg hover:bg-primary/5">
                   Contact
                 </Link>
-                <Link to="/red-water-marine" className="px-3 py-2 text-sm text-foreground hover:text-primary font-medium transition-colors rounded-lg hover:bg-primary/5">
+                <Link to="/red-water-marine" className="px-2 lg:px-3 py-2 text-sm text-foreground hover:text-primary font-medium transition-colors rounded-lg hover:bg-primary/5">
                   Red Water Marine
                 </Link>
               </nav>
 
               {/* Desktop Contact Info */}
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-2 lg:space-x-3">
                 <a
                   href="tel:+971552294871"
-                  className="flex items-center space-x-2 text-primary hover:text-primary/80 font-medium text-sm transition-colors px-3 py-2 rounded-lg hover:bg-primary/5"
+                  className="flex items-center space-x-2 text-primary hover:text-primary/80 font-medium text-sm transition-colors px-2 lg:px-3 py-2 rounded-lg hover:bg-primary/5"
                 >
                   <Phone className="h-4 w-4" aria-hidden="true" />
-                  <span>+971 55 229 4871</span>
+                  <span className="hidden lg:inline">+971 55 229 4871</span>
                 </a>
                 <a
                   href="mailto:operations@pantechmarine.com"
-                  className="flex items-center space-x-2 text-primary hover:text-primary/80 font-medium text-sm transition-colors px-3 py-2 rounded-lg hover:bg-primary/5"
+                  className="flex items-center space-x-2 text-primary hover:text-primary/80 font-medium text-sm transition-colors px-2 lg:px-3 py-2 rounded-lg hover:bg-primary/5"
                 >
                   <Mail className="h-4 w-4" aria-hidden="true" />
-                  <span className="hidden sm:inline">operations@pantechmarine.com</span>
+                  <span className="hidden xl:inline">operations@pantechmarine.com</span>
                 </a>
               </div>
             </div>
